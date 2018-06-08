@@ -38,15 +38,8 @@ bot.on('message', message => {
         message.channel.sendMessage(variable)
         break;
         case "reactplease":
-            const ytdl = require('ytdl-core');
-const streamOptions = { seek: 0, volume: 1 };
-const channel = message.member.voiceChannel
-channel.join("❤ Vocal of [BL] ❤")
-  .then(connection => {
-    const stream = ytdl('https://www.youtube.com/watch?v=XAWgeLF9EVQ', { filter : 'audioonly' });
-    const dispatcher = connection.playStream(stream, streamOptions);
-  })
-  .catch(console.error);
+        message.react('🇳');
+        message.react('🇴');        
     }
 
 });
