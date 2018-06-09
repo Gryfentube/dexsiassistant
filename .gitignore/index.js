@@ -1,17 +1,24 @@
 const Discord = require('discord.js');
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
 
+const adapter = new FileSync('database.json');
+const db = low(adapter);
 
+db.defaults({ ann:[]})
+    .write()
 var bot = new Discord.Client();
 var prefix = ("_");
-var activ = ("Moderer");
+var activ = ("créer un monde sans limite");
 var values = ("empty");
 bot.on('ready', () => {
     bot.user.setPresence({ game: { name: activ}});
+    var annonce = db.get(`ann`).map('annonce').value();
     console.log("Le bot est prêt");
     
 });
 
-bot.login('NDUzMzI0Nzg4NDc2MTQ5NzYy.Df0-Dw.Pp3TafcyL6tkho12Sv_X-B9QnnI');
+bot.login('NDUzMzI0Nzg4NDc2MTQ5NzYy.DfdPcA.65Ruvjb9MAAZ0qIG-W5x-dcTo_0');
 
 bot.on('message', message => {
 
@@ -20,26 +27,48 @@ bot.on('message', message => {
 
     switch (args[0].toLowerCase()){
 
-        case "playlist":
-       
-        message.channel.sendMessage("!p https://www.youtube.com/watch?v=kUEfQw5fuAI&list=PLe8jmEHFkvsYv5CV7wSLZk7UG41KY8q_Q")
+        case "say":
+        var value = message.content.substr(4);
+        bot.channels.get('452800422655033365').send(value);
         break;
-        case "supprimerlesalonuesh":    
-        message.channel.delete()
         //message.reply("```Bonjour je me présente je suis un bot```");
         console.log('salope');
+        case "parler":
+        var author = message.member.displayName;
+        var value = message.content.substr(7);
+        bot.channels.get('454265924036460555').send(author + " vous dit depuis l'autre serveur : " + value);
         break;
-        case "id":
-        var variable = message.id
-        message.channel.sendMessage(variable)
+        case "relrap":
+        var author = message.member.displayName;
+        var value = message.content.substr(7);
+        bot.channels.get('441664261454823446').send(author + " vous dit depuis l'autre serveur : " + value);
         break;
-        case "idchannel":
-        var variable = message.channel.id
-        message.channel.sendMessage(variable)
+        case "author":
+        var author = "oui";
+        var author = message.member.displayName;
+        console.log(author);
+        message.channel.send(author);
         break;
-        case "reactplease":
-        message.react('🇳');
-        message.react('🇴');        
+    }
+
+    if (message.content === "truc"){
+        
+    }
+    if (message.content === prefix + "help"){
+        message.channel.sendMessage("Ceci est une commandes :\n -/help pour les commandes");
+        console.log("Comme help prises");
+    }
+    if (message.content === prefix + "frite"){
+        var activ = ("Je mange une frite");
+        bot.user.setPresence({ game: { name: activ}});
+        console.log("tu fais quoi là");
+        console.log(activ);
+    }
+        if (message.content === prefix + "patate"){
+            var activ = ("Je mange une SCANDALE");
+            bot.user.setPresence({ game: { name: activ}});
+            console.log("tu fais quoi là");
+            console.log(activ);
     }
 
 });
