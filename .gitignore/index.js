@@ -28,7 +28,7 @@ bot.on('message', message => {
     if (!message.content.startsWith(prefix)) return;
     var args = message.content.substring(prefix.length).split(" ");
     var channelide = message.channel.id;
-    message.channel.send(author);
+    var author = message.member.displayName;
     switch (args[0].toLowerCase()){
 
         case "say":
