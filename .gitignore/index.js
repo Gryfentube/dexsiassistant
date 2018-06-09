@@ -55,9 +55,10 @@ break;
             if (channelide === "441678329255428096") {
                 bot.channels.get('4533143598887075946').sendMessage(author + " vous dit depuis l'autre serveur : " + value);
             }
-            if (channelide === "4533143598887075946") {
+            if else (channelide === "4533143598887075946") {
                 bot.channels.get('441678329255428096').sendMessage(author + " vous dit depuis l'autre serveur : " + value);
             }
+            
 break;
         case "author":
         var author = "oui";
