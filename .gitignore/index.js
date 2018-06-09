@@ -44,18 +44,19 @@ bot.on('message', message => {
             }
 break;
         case "activ":
+            var value = message.content.substr(7);
             if ((message.member.id === "239310906981482496") || (message.member.id === "187554016853622784")){
-                
+                bot.user.setPresence({ game: { name: value}});
             }
 break;
         //message.reply("```Bonjour je me présente je suis un bot```");
         case "parler":
-        var author = message.member.displayName;
         var value = message.content.substr(7);
-        bot.channels.get('454265924036460555').send(author + " vous dit depuis l'autre serveur : " + value);
+            if (channel.id) {
+                bot.channels.get('454265924036460555').send(author + " vous dit depuis l'autre serveur : " + value);
+            }
         break;
         case "relrap":
-        var author = message.member.displayName;
         var value = message.content.substr(7);
         bot.channels.get('441664261454823446').send(author + " vous dit depuis l'autre serveur : " + value);
         break;
@@ -79,11 +80,8 @@ break;
         console.log("tu fais quoi là");
         console.log(activ);
     }
-        if (message.content === prefix + "patate"){
-            var activ = ("Je mange une SCANDALE");
-            bot.user.setPresence({ game: { name: activ}});
-            console.log("tu fais quoi là");
-            console.log(activ);
+        if (message.content === prefix + "truc"){
+            message.reply(channel.id)
     }
 
 });
