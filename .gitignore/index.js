@@ -27,6 +27,7 @@ bot.on('message', message => {
 
     if (!message.content.startsWith(prefix)) return;
     var args = message.content.substring(prefix.length).split(" ");
+    var channelid = message.channel.id;
     message.channel.send(author);
     switch (args[0].toLowerCase()){
 
