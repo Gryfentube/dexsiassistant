@@ -81,7 +81,7 @@ break;
         console.log(activ);
     }
         if (message.content === prefix + "truc"){
-            message.reply(channel.id)
+            message.reply(channels.id)
     }
 
 });
