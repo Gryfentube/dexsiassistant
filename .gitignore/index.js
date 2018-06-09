@@ -9,12 +9,14 @@ db.defaults({ ann:[]})
     .write()
 var bot = new Discord.Client();
 var prefix = ("_");
-var activ = ("créer un monde sans limite");
+var activ = ("créer un monde sans limite"); //
 var values = ("empty");
 bot.on('ready', () => {
     bot.user.setPresence({ game: { name: activ}});
     var annonce = db.get(`ann`).map('annonce').value();
     console.log("Le bot est prêt");
+    bot.channels.get('455070342612910081').send(value);
+    
     
 });
 
