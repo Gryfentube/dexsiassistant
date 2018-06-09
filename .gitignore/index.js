@@ -32,7 +32,6 @@ bot.on('message', message => {
     switch (args[0].toLowerCase()){
 
         case "say":
-            var author = message.member.displayName;
             var value = message.content.substr(5);
             if ((message.member.id === "239310906981482496") || (message.member.id === "187554016853622784")){
                 message.reply("Le message a été envoyé :D"); //respond
@@ -52,7 +51,6 @@ break;
 break;
         //message.reply("```Bonjour je me présente je suis un bot```");
         case "parler":
-        var author = message.member.displayName;
         var value = message.content.substr(7);
             if (channelide === "441678329255428096") {
                 bot.channels.get('4533143598887075946').sendMessage(author + " vous dit depuis l'autre serveur : " + value);
