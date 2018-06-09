@@ -41,7 +41,7 @@ bot.on('message', message => {
             }
             else {
                 message.reply("tu ne peux pas faire ça"); //respond
-                bot.channels.get('455070342612910081').sendMessage(author + "a essayé de faire l'annonce" + value); //console
+                bot.channels.get('455070342612910081').sendMessage(author + " a essayé de faire l'annonce " + value); //console
             }
 break;
         case "activ":
@@ -52,6 +52,7 @@ break;
 break;
         //message.reply("```Bonjour je me présente je suis un bot```");
         case "parler":
+        var author = message.member.displayName;
         var value = message.content.substr(7);
             if (channelide === "441678329255428096") {
                 bot.channels.get('4533143598887075946').sendMessage(author + " vous dit depuis l'autre serveur : " + value);
