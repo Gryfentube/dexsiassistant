@@ -43,8 +43,10 @@ bot.on('message', message => {
                 bot.channels.get('455070342612910081').send(author + "a essayé de faire l'annonce" + value); //console
             }
 break;
-        case "commu":
-            if
+        case "activ":
+            if ((message.member.id === "239310906981482496") || (message.member.id === "187554016853622784")){
+                
+            }
 break;
         //message.reply("```Bonjour je me présente je suis un bot```");
         case "parler":
