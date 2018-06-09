@@ -34,17 +34,16 @@ bot.on('message', message => {
         var author = message.member.displayName;
         var value = message.content.substr(4);
             if ((message.member.id === "239310906981482496") || (message.member.id === "187554016853622784")){
-        message.channel.reply("Le message a été envoyé :D"); //respond
+        message.reply("Le message a été envoyé :D"); //respond
         bot.channels.get('452800422655033365').send(value); //annonce
         bot.channels.get('455070342612910081').send("L'annonce " + value + " a été envoyé par " + author); //console
             }
             else {
-                message.channel.reply("tu ne peux pas faire ça");
+                message.reply("tu ne peux pas faire ça"); //respond
                 bot.channels.get('455070342612910081').send(author + "a essayé de faire l'annonce" + value); //console
             }
         break;
         //message.reply("```Bonjour je me présente je suis un bot```");
-        console.log('salope');
         case "parler":
         var author = message.member.displayName;
         var value = message.content.substr(7);
