@@ -15,7 +15,8 @@ bot.on('ready', () => {
     bot.user.setPresence({ game: { name: activ}});
     var annonce = db.get(`ann`).map('annonce').value();
     console.log("Le bot est prêt");
-    bot.channels.get('455070342612910081').send("DexSia | Assistant est en ligne");
+    bot.channels.get('455070342612910081').send("Je suis en ligne ! :D");
+    
     
     
 });
