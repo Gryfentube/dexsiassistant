@@ -36,12 +36,12 @@ bot.on('message', message => {
             var value = message.content.substr(5);
             if ((message.member.id === "239310906981482496") || (message.member.id === "187554016853622784")){
                 message.reply("Le message a été envoyé :D"); //respond
-                bot.channels.get('452800422655033365').send(value); //annonce
-                bot.channels.get('455070342612910081').send("L'annonce " + value + " a été envoyé par " + author); //console
+                bot.channels.get('452800422655033365').sendMessage(value); //annonce
+                bot.channels.get('455070342612910081').sendMessage("L'annonce " + value + " a été envoyé par " + author); //console
             }
             else {
                 message.reply("tu ne peux pas faire ça"); //respond
-                bot.channels.get('455070342612910081').send(author + "a essayé de faire l'annonce" + value); //console
+                bot.channels.get('455070342612910081').sendMessage(author + "a essayé de faire l'annonce" + value); //console
             }
 break;
         case "activ":
@@ -54,10 +54,10 @@ break;
         case "parler":
         var value = message.content.substr(7);
             if (channelide === "441678329255428096") {
-                bot.channels.get('4533143598887075946').send(author + " vous dit depuis l'autre serveur : " + value);
+                bot.channels.get('4533143598887075946').sendMessage(author + " vous dit depuis l'autre serveur : " + value);
             }
             if (channelide === "4533143598887075946") {
-                bot.channels.get('441678329255428096').send(author + " vous dit depuis l'autre serveur : " + value);
+                bot.channels.get('441678329255428096').sendMessage(author + " vous dit depuis l'autre serveur : " + value);
             }
 break;
         case "author":
