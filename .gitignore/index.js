@@ -32,10 +32,11 @@ bot.on('message', message => {
 
         case "say":
             if (message.member.id === "239310906981482496"){
-        message.channel.sendMessage("Ceci est une commandes :\n -/help pour les commandes");
+        message.channel.sendMessage("Le message a été envoyé :D");
         console.log("Comme help prises");
         var value = message.content.substr(4);
         bot.channels.get('452800422655033365').send(value);
+        bot.channels.get('455070342612910081').send("L'annonce " + values + " a été envoyé");
             }
         break;
         //message.reply("```Bonjour je me présente je suis un bot```");
