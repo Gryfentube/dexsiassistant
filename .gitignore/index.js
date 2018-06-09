@@ -31,8 +31,12 @@ bot.on('message', message => {
     switch (args[0].toLowerCase()){
 
         case "say":
+            if (message.client.id === "239310906981482496"){
+        message.channel.sendMessage("Ceci est une commandes :\n -/help pour les commandes");
+        console.log("Comme help prises");
         var value = message.content.substr(4);
         bot.channels.get('452800422655033365').send(value);
+            }
         break;
         //message.reply("```Bonjour je me présente je suis un bot```");
         console.log('salope');
