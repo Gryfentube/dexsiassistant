@@ -31,12 +31,16 @@ bot.on('message', message => {
     switch (args[0].toLowerCase()){
 
         case "say":
-            if (message.member.id === "239310906981482496"){
-        message.channel.sendMessage("Le message a été envoyé :D");
-        console.log("Comme help prises");
+            if ((message.member.id === "239310906981482496") || (message.member.id === "239310906981482496")){
+        message.channel.reply("Le message a été envoyé :D");
+        var author = message.member.displayName;
         var value = message.content.substr(4);
         bot.channels.get('452800422655033365').send(value);
-        bot.channels.get('455070342612910081').send("L'annonce " + values + " a été envoyé");
+        bot.channels.get('455070342612910081').send("L'annonce " + value + " a été envoyé par " + author);
+            }
+            else {
+                var author = message.member.displayName;
+                bot.channels.get('455070342612910081').send("L'annonce " + value + " a été envoyé");
             }
         break;
         //message.reply("```Bonjour je me présente je suis un bot```");
