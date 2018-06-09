@@ -32,7 +32,7 @@ bot.on('message', message => {
 
         case "say":
         var author = message.member.displayName;
-        var value = message.content.substr(4);
+        var value = message.content.substr(5);
             if ((message.member.id === "239310906981482496") || (message.member.id === "187554016853622784")){
         message.reply("Le message a été envoyé :D"); //respond
         bot.channels.get('452800422655033365').send(value); //annonce
