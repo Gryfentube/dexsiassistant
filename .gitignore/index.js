@@ -51,6 +51,7 @@ break;
 break;
         //message.reply("```Bonjour je me présente je suis un bot```");
         case "parler":
+        var channelide = message.channel.id;
         var value = message.content.substr(7);
             if (channelide === "441678329255428096") {
                 bot.channels.get('4533143598887075946').sendMessage(author + " vous dit depuis l'autre serveur : " + value);
