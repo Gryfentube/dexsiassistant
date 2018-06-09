@@ -27,7 +27,7 @@ bot.on('message', message => {
 
     if (!message.content.startsWith(prefix)) return;
     var args = message.content.substring(prefix.length).split(" ");
-    var channelid = message.channel.id;
+    var channelide = message.channel.id;
     message.channel.send(author);
     switch (args[0].toLowerCase()){
 
@@ -53,13 +53,12 @@ break;
         //message.reply("```Bonjour je me présente je suis un bot```");
         case "parler":
         var value = message.content.substr(7);
-            if (channel.id) {
-                bot.channels.get('454265924036460555').send(author + " vous dit depuis l'autre serveur : " + value);
+            if (channelide === "441678329255428096") {
+                bot.channels.get('4533143598887075946').send(author + " vous dit depuis l'autre serveur : " + value);
             }
-        break;
-        case "relrap":
-        var value = message.content.substr(7);
-        bot.channels.get('441664261454823446').send(author + " vous dit depuis l'autre serveur : " + value);
+            if (channelide === "4533143598887075946")
+                bot.channels.get('441678329255428096').send(author + " vous dit depuis l'autre serveur : " + value);
+            }
         break;
         case "author":
         var author = "oui";
