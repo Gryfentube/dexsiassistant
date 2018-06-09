@@ -58,6 +58,9 @@ break;
             else if (channelide === "4533143598887075946") {
                 bot.channels.get('441678329255428096').sendMessage(author + " vous dit depuis l'autre serveur : " + value);
             }
+            else {
+                bot.channels.get('455070342612910081').sendMessage(author); //console
+            }
             
 break;
         case "author":
