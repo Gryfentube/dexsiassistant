@@ -47,7 +47,17 @@ bot.on('message', message => {
             if ((message.member.id === "239310906981482496") || (message.member.id === "187554016853622784")){
                 message.reply("Le message a été envoyé :D"); //respond
                 bot.channels.get(annonce).sendMessage(value); //annonce
-                bot.channels.get(consaule).sendMessage("L'annonce :```" + value + "``` a été envoyé par __" + author + "__"); //console
+                bot.channels.get(consaule).send({embed: {
+    color: 3447003,
+    author: {
+      name: "Annonce effectué",
+      icon_url: message.member.avatarURL
+    },
+    title: "L'annonce :",
+    description: value,
+    timestamp: "l'annonce a été envoyé par" + author
+  }
+});; //console
             }
             else {
                 message.reply("tu ne peux pas faire ça"); //respond
