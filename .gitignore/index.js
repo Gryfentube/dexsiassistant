@@ -79,6 +79,15 @@ break;
             }
             
 break;
+        case "":
+            var value = message.content.substr(1);
+            if (channelide === "455798472076034051") {
+                bot.user.setPresence({ game: { name: value}});
+                }
+            
+            
+            
+break;
        /* case "sendrules":
                 
     const emo1 = message.guild.emojis.find("name", "1_");
