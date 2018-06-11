@@ -7,7 +7,7 @@ const db = low(adapter);
 
 
 //salons admin
-const console = "455740278272425995";
+const consaule = "455740278272425995";
 const annonce = "452800422655033365";
 const jack = "239310906981482496";
 const gryf = "187554016853622784";
@@ -24,7 +24,7 @@ bot.on('ready', () => {
     bot.user.setPresence({ game: { name: activ}});
     var annonce = db.get(`ann`).map('annonce').value();
     console.log("Le bot est prêt");
-    bot.channels.get(console).send("Je suis en ligne ! :D");
+    bot.channels.get(consaule).send("Je suis en ligne ! :D");
 });
 
 bot.login(process.env.TOKEN);
@@ -42,11 +42,11 @@ bot.on('message', message => {
             if ((message.member.id === "239310906981482496") || (message.member.id === "187554016853622784")){
                 message.reply("Le message a été envoyé :D"); //respond
                 bot.channels.get(annonce).sendMessage(value); //annonce
-                bot.channels.get(console).sendMessage("L'annonce " + value + " a été envoyé par " + author); //console
+                bot.channels.get(consaule).sendMessage("L'annonce " + value + " a été envoyé par " + author); //console
             }
             else {
                 message.reply("tu ne peux pas faire ça"); //respond
-                bot.channels.get('455070342612910081').sendMessage(author + " a essayé d'annoncé " + value); //console
+                bot.channels.get(consaule).sendMessage(author + " a essayé d'annoncé " + value); //console
             }
 break;
         case "activ":
