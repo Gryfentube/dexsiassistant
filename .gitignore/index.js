@@ -79,23 +79,33 @@ break;
     const emo11 = message.guild.emojis.find("name", "11");
     //EMOJI end
                //rules
-    const rules1 = "__**Pas de spam.**__ Il est bon de poster quelques emoji de temps en temps, mais évitez d'en envoyer trop à la suite, ou le même emoji plusieurs fois. **Enfreindre cette règle sera passible d'un mute/kick.**";
-    const rules2 = "__**Pas d'NSFW.**__ Merci de ne pas poster d'images, de liens ou faire allusion à quoi que ce soit d'NSFW. Cette règle s'applique à tout les channels du Discord. **Enfreindre cette règle sera passible d'un ban.**";
-    const rules3 = "__**Pas de Pub de server.**__ Ici les liens pour rejoindre les autres servers sont interdits. Cette règle s'applique aussi aux  DM. **Enfreindre cette règle sera passible d'un mute/kick/ban.**";
-    const rules4 = "__**Pas de profils inappropriés**__ (pseudos,avatars,statuts Discord). Cela inclue aussi les pseudos invisibles,les unicodes etc. **Enfreindre cette règle sera passible d'un kick/ban.**";
-    const rules5 = "__**N'abusez pas des mentions.**__ Si vous avez un problème parlez en dans #😓problèmes et un @Staff  vous aidera donc ne le mentionnez pas et n'envoyez pas de messages en DM. **Enfreindre cette règle sera passible d'un mute/kick.**";
+    const rules1 = " __**Pas de spam.**__ Il est bon de poster quelques emoji de temps en temps, mais évitez d'en envoyer trop à la suite, ou le même emoji plusieurs fois. **Enfreindre cette règle sera passible d'un mute/kick.**";
+    const rules2 = " __**Pas d'NSFW.**__ Merci de ne pas poster d'images, de liens ou faire allusion à quoi que ce soit d'NSFW. Cette règle s'applique à tout les channels du Discord. **Enfreindre cette règle sera passible d'un ban.**";
+    const rules3 = " __**Pas de Pub de server.**__ Ici les liens pour rejoindre les autres servers sont interdits. Cette règle s'applique aussi aux  DM. **Enfreindre cette règle sera passible d'un mute/kick/ban.**";
+    const rules4 = " __**Pas de profils inappropriés**__ (pseudos,avatars,statuts Discord). Cela inclue aussi les pseudos invisibles,les unicodes etc. **Enfreindre cette règle sera passible d'un kick/ban.**";
+    const rules5 = " __**N'abusez pas des mentions.**__ Si vous avez un problème parlez en dans #😓problèmes et un @Staff  vous aidera donc ne le mentionnez pas et n'envoyez pas de messages en DM. **Enfreindre cette règle sera passible d'un mute/kick.**";
     const rules6 = " __**Pas de complaintes par mentions.**__ Vous plaindre en mentionnant @.everyone n'enchante personne, ni le Staff ni les autres. Juste ne faites pas ça :pray:. **Enfreindre cette règle sera passible d'un mute/kick.**";
-    const rules7 = "__**Ne mutez pas les channels importants & ne bloquez pas les @Staff.**__ C'est irrespectueux d'ignorer ce qu'ils disent. **Enfreindre cette regle sera passible d'un kick.**";
-    const rules8 = "__**Pas d'homophobie, racisme, etc.**__ Pas de caractère antisémite, raciste, homophobe, même pour rire.Essayer de bypass les mots interdits en changer les caractères ou les lettres est aussi interdit. **Enfreindre cette règle sera passible d'un mute/kick/ban.** :gay_pride_flag:";
-    const rules9 = "__**N'abusez pas du channel #😓problèmes.**__ Utilisez ce channel seulement si vous avez un problème lié au server.\n**Enfreindre cette règle sera passible d'un mute.**";
-    const rules10 = "__**Respectez les membres.**__  Donc pas d'insultes,comportement agressif,et les dramas en DM. **Enfreindre cette règle sera passible d'un mute/kick**";
-    const rules11 = "__**Ne volez pas le travail et les créations des autres.**__ Seuls vos contenus sont autorisés. **Enfreindre cette règle sera passible d'un kick.**";
+    const rules7 = " __**Ne mutez pas les channels importants & ne bloquez pas les @Staff.**__ C'est irrespectueux d'ignorer ce qu'ils disent. **Enfreindre cette regle sera passible d'un kick.**";
+    const rules8 = " __**Pas d'homophobie, racisme, etc.**__ Pas de caractère antisémite, raciste, homophobe, même pour rire.Essayer de bypass les mots interdits en changer les caractères ou les lettres est aussi interdit. **Enfreindre cette règle sera passible d'un mute/kick/ban.** :gay_pride_flag:";
+    const rules9 = " __**N'abusez pas du channel #😓problèmes.**__ Utilisez ce channel seulement si vous avez un problème lié au server.\n**Enfreindre cette règle sera passible d'un mute.**";
+    const rules10 = " __**Respectez les membres.**__  Donc pas d'insultes,comportement agressif,et les dramas en DM. **Enfreindre cette règle sera passible d'un mute/kick**";
+    const rules11 = " __**Ne volez pas le travail et les créations des autres.**__ Seuls vos contenus sont autorisés. **Enfreindre cette règle sera passible d'un kick.**";
     
             var rules = bot.channels.get('452800240332963843');
-            rules.sendMessage("```diff\n- Ces règles s'applique à tout le monde. Si tu ne les respecte pas c'est votre problème, vous êtes responsable de vos actes.\n```")
+            rules.sendMessage("```diff\n- Ces règles s'appliquent à tout le monde. Si tu ne les respecte pas c'est votre problème, vous êtes responsable de vos actes.\n```")
             .then(rules.sendMessage(emo1 + rules1)
-            .then(rules.sendMessage(emo2 + rules2))
-            )
+            .then(rules.sendMessage(emo2 + rules2)
+            .then(rules.sendMessage(emo3+ rules3)
+            .then(rules.sendMessage(emo4+ rules4)
+            .then(rules.sendMessage(emo5+ rules5)
+            .then(rules.sendMessage(emo6+ rules6)
+            .then(rules.sendMessage(emo7+ rules7)
+            .then(rules.sendMessage(emo8+ rules8)
+            .then(rules.sendMessage(emo9+ rules9)
+            .then(rules.sendMessage(emo10+ rules10)
+            .then(rules.sendMessage(emo11+ rules11))))))))))));
+            
+            
         break;
     }
 
