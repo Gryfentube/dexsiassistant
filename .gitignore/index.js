@@ -93,7 +93,9 @@ break;
     
             var rules = bot.channels.get('452800240332963843');
             rules.sendMessage("```diff\n- Ces règles s'applique à tout le monde. Si tu ne les respecte pas c'est votre problème, vous êtes responsable de vos actes.\n```")
-            .then(rules.sendMessage(emo1 + rules1))
+            .then(rules.sendMessage(emo1 + rules1)
+            .then(rules.sendMessage(emo2 + rules2))
+            )
         break;
     }
 
