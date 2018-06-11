@@ -11,7 +11,7 @@ bot.login(process.env.TOKEN);
 //salons DexSia Introduce YourSelf
     const annDXSIY = "452800422655033365"; //salon annonce DexSia Introduce Yourself
 //Portal DexSia Introduce Yourself
-    const annPoDXSIY = ""; //salon annonce de Portal Dxs IY
+    const annPoDXSIY = "455740492999688192"; //salon annonce de Portal Dxs IY
     const activitDXSIY = "455798472076034051"; //salon activité du bot DexSia Assistant
     const consauleDXSIY = "455740278272425995"; //salon console de Portal Dxs IY
 //salons DexSia
