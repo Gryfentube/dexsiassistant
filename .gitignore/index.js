@@ -66,8 +66,8 @@ break;
 break;
         case "sendrules":
             var rules = bot.channels.get('452800240332963843');
-            rules.sendMessages("❖\n:1_: Pas de spam. Il est bon de poster quelques emoji de temps en temps, mais évitez d'en envoyer trop à la suite, ou le même emoji plusieurs fois. Enfreindre cette règle sera passible d'un mute/kick.")
-            .then(rules.sendMessages("règle 2"))
+            rules.sendMessage("❖\n:1_: Pas de spam. Il est bon de poster quelques emoji de temps en temps, mais évitez d'en envoyer trop à la suite, ou le même emoji plusieurs fois. Enfreindre cette règle sera passible d'un mute/kick.")
+            .then(rules.sendMessage("règle 2"))
         break;
     }
 
