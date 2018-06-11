@@ -36,24 +36,23 @@ bot.on('ready', () => {
     bot.user.setPresence({ game: { name: activ}});
     var annonce = db.get(`ann`).map('annonce').value();
     console.log("Le bot est prêt");
-    bot.channels.get(consauleDXSIY).send({embed: {color: 3447003, author: {name: "Je suis en ligne :D",
+    bot.channels.get(consauleDXSIY).send({embed: {color: 0x3ac400, author: {name: "Je suis en ligne :D",
       icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"}}})
 });
 
 bot.login(process.env.TOKEN);
 
 bot.on('message', message => {
-    
+    var author = message.member.displayName;
     if (message.channel.id === activitDXSIY) {
     var value = message.content;
     bot.user.setPresence({ game: { name: value}})
-        .then(bot.channels.get(consauleDXS).sendMessage({embed: {color: 0x202020, author: {name: "Je joue maintenant à " + value + " grâce à " + author,
+        .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0x202020, author: {name: "Je joue maintenant à " + value + " grâce à " + author,
       icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"}}}))};
     
     if (!message.content.startsWith(prefix)) return;
     var args = message.content.substring(prefix.length).split(" ");
     var channelide = message.channel.id;
-    var author = message.member.displayName;
     switch (args[0].toLowerCase()){
 
         case "say":
