@@ -56,7 +56,6 @@ bot.on('message', message => {
     var args = message.content.substring(prefix.length).split(" ");
     var channelide = message.channel.id;
     switch (args[0].toLowerCase()){
-break;
         case "activ":
             var value = message.content.substr(7);
             if (alladmin){
