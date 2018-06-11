@@ -11,6 +11,7 @@ const consaule = "455740278272425995";
 const annonce = "452800422655033365";
 const jack = "239310906981482496";
 const gryf = "187554016853622784";
+const gorj = (message.member.id === jack) || (message.member.id === gryf)
 //end
 
 
@@ -44,7 +45,7 @@ bot.on('message', message => {
 
         case "say":
             var value = message.content.substr(5);
-            if ((message.member.id === "239310906981482496") || (message.member.id === "187554016853622784")){
+            if (gorj){
                 message.reply("Le message a été envoyé :D"); //respond
                 bot.channels.get(annonce).sendMessage(value); //annonce
                 bot.channels.get(consaule).send({embed: {
@@ -69,7 +70,7 @@ bot.on('message', message => {
 break;
         case "activ":
             var value = message.content.substr(7);
-            if ((message.member.id === "239310906981482496") || (message.member.id === "187554016853622784")){
+            if (amdin){
                 bot.user.setPresence({ game: { name: value}});
             }
 break;
