@@ -7,11 +7,11 @@ const db = low(adapter);
 
 
 //salons admin
-const consaule = "455740278272425995";
-const annonce = "452800422655033365";
-const jack = "239310906981482496";
-const gryf = "187554016853622784";
-const gorj = "(message.member.id === jack) || (message.member.id === gryf)";
+const consaule = "455740278272425995"; //salon console de Portal Dxs IY
+const annonce = "452800422655033365"; //salon annonce DexSia Introduce Yourtself
+const jack = "239310906981482496"; //Définir Jack avec son id
+const gryf = "187554016853622784"; //Définir Gryf avec son id
+const gorj = "(message.member.id === jack) || (message.member.id === gryf)"; //Jack ou Gryf (dans un if généralement)
 //end
 
 
