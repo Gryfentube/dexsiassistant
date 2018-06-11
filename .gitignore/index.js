@@ -9,6 +9,7 @@ const db = low(adapter);
 //salons admin
 const consaule = "455740278272425995"; //salon console de Portal Dxs IY
 const annonce = "452800422655033365"; //salon annonce DexSia Introduce Yourtself
+const activit = "455798472076034051"; //salon activité de Portal Dxs IY
 const jack = "239310906981482496"; //Définir Jack avec son id
 const gryf = "187554016853622784"; //Définir Gryf avec son id
 const gorj = "(message.member.id === jack) || (message.member.id === gryf)"; //Jack ou Gryf (dans un if généralement)
@@ -36,7 +37,11 @@ bot.on('ready', () => {
 bot.login(process.env.TOKEN);
 
 bot.on('message', message => {
-
+    if (message.channel.id === 455798472076034051) {
+    var value = message.content;
+    bot.user.setPresence({ game: { name: value}})
+    }
+    
     if (!message.content.startsWith(prefix)) return;
     var args = message.content.substring(prefix.length).split(" ");
     var channelide = message.channel.id;
@@ -80,13 +85,6 @@ break;
             
 break;
         case "":
-            var value = message.content.substr(1);
-            if (channelide === "455798472076034051") {
-                bot.user.setPresence({ game: { name: value}});
-                }
-            
-            
-            
 break;
        /* case "sendrules":
                 
