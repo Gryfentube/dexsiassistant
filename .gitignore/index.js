@@ -28,7 +28,7 @@ bot.on('ready', () => {
     color: 3447003,
     author: {
       name: "Je suis en ligne :D",
-      icon_url: https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png
+      icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"
     }}})
 });
 
