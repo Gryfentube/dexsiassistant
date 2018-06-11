@@ -37,7 +37,7 @@ bot.on('ready', () => {
 bot.login(process.env.TOKEN);
 
 bot.on('message', message => {
-    if (message.channel.id === 455798472076034051) {
+    if (message.channel.id === activit) {
     var value = message.content;
     bot.user.setPresence({ game: { name: value}})
     }
