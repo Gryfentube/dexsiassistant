@@ -8,7 +8,6 @@ const db = low(adapter);
 
 //salons admin
 const consaule = "455740278272425995";
-const sayincons = bot.channels.get(consaule);
 const annonce = "452800422655033365";
 const jack = "239310906981482496";
 const gryf = "187554016853622784";
@@ -25,7 +24,7 @@ bot.on('ready', () => {
     bot.user.setPresence({ game: { name: activ}});
     var annonce = db.get(`ann`).map('annonce').value();
     console.log("Le bot est prêt");
-    sayincons.send("Je suis en ligne ! :D");
+    bot.channels.get(consaule).send("Je suis en ligne ! :D");
 });
 
 bot.login(process.env.TOKEN);
@@ -43,7 +42,7 @@ bot.on('message', message => {
             if ((message.member.id === "239310906981482496") || (message.member.id === "187554016853622784")){
                 message.reply("Le message a été envoyé :D"); //respond
                 bot.channels.get(annonce).sendMessage(value); //annonce
-                bot.channels.get(consaule).sendMessage("L'annonce " + value + " a été envoyé par " + author); //console
+                bot.channels.get(consaule).sendMessage("L'annonce :```" + value + "``` a été envoyé par __" + author + "__"); //console
             }
             else {
                 message.reply("tu ne peux pas faire ça"); //respond
