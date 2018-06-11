@@ -17,19 +17,6 @@ bot.on('ready', () => {
     console.log("Le bot est prêt");
     bot.channels.get('455070342612910081').send("Je suis en ligne ! :D");
     
-    //EMOJI
-    const emo1 = message.guild.emojis.find("name", "1_");
-    const emo2 = message.guild.emojis.find("name", "2_");
-    const emo3 = message.guild.emojis.find("name", "3_");
-    const emo4 = message.guild.emojis.find("name", "4_");
-    const emo5 = message.guild.emojis.find("name", "5_");
-    const emo6 = message.guild.emojis.find("name", "6_");
-    const emo7 = message.guild.emojis.find("name", "7_");
-    const emo8 = message.guild.emojis.find("name", "8_");
-    const emo9 = message.guild.emojis.find("name", "9_");
-    const emo10 = message.guild.emojis.find("name", "10");
-    const emo11 = message.guild.emojis.find("name", "11");
-    //EMOJI end
     //rules
     const rules1 = "__**Pas de spam.**__ Il est bon de poster quelques emoji de temps en temps, mais évitez d'en envoyer trop à la suite, ou le même emoji plusieurs fois. **Enfreindre cette règle sera passible d'un mute/kick.**";
     const rules2 = "__**Pas d'NSFW.**__ Merci de ne pas poster d'images, de liens ou faire allusion à quoi que ce soit d'NSFW. Cette règle s'applique à tout les channels du Discord. **Enfreindre cette règle sera passible d'un ban.**";
@@ -90,6 +77,19 @@ break;
             
 break;
         case "sendrules":
+                //EMOJI
+    const emo1 = message.guild.emojis.find("name", "1_");
+    const emo2 = message.guild.emojis.find("name", "2_");
+    const emo3 = message.guild.emojis.find("name", "3_");
+    const emo4 = message.guild.emojis.find("name", "4_");
+    const emo5 = message.guild.emojis.find("name", "5_");
+    const emo6 = message.guild.emojis.find("name", "6_");
+    const emo7 = message.guild.emojis.find("name", "7_");
+    const emo8 = message.guild.emojis.find("name", "8_");
+    const emo9 = message.guild.emojis.find("name", "9_");
+    const emo10 = message.guild.emojis.find("name", "10");
+    const emo11 = message.guild.emojis.find("name", "11");
+    //EMOJI end
             var rules = bot.channels.get('452800240332963843');
             rules.sendMessage("```diff\n- Ces règles s'applique à tout le monde. Si tu ne les respecte pas c'est votre problème, vous êtes responsable de vos actes.\n```")
             .then(rules.sendMessage(emo1 + rules1))
