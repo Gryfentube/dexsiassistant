@@ -10,10 +10,14 @@ const db = low(adapter);
 const annDXSIY = "452800422655033365"; //salon annonce DexSia Introduce Yourself
     //Poel
     const annPoDXSIY = ""; //salon annonce de Portal Dxs IY
-    const activit = "455798472076034051"; //salon activité du bot DexSia Assistant
+    const activitDXSIY = "455798472076034051"; //salon activité du bot DexSia Assistant
     const consauleDXSIY = "455740278272425995"; //salon console de Portal Dxs IY
 //salons DexSia
-
+const annDXS = "454994767877636098"; //salon annonce DexSia
+    //Poel
+    const annPoDXS = "455740525807665172"; //salon annonce de Portal DexSia
+    const activitDXS = "455836828214231082"; //salon activité du bot DexSia
+    const consauleDXS = "455740246110240778"; //salon console de Portal DexSia
 //Admin
 const jack = "239310906981482496"; //Définir Jack avec son id
 const gryf = "187554016853622784"; //Définir Gryf avec son id
@@ -39,9 +43,11 @@ bot.on('ready', () => {
 bot.login(process.env.TOKEN);
 
 bot.on('message', message => {
-    if (message.channel.id === activit) {
+    
+    if (message.channel.id === activitDXSIY) {
     var value = message.content;
     bot.user.setPresence({ game: { name: value}})
+        .then
     }
     
     if (!message.content.startsWith(prefix)) return;
