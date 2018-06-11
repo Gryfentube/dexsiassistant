@@ -11,7 +11,7 @@ const consaule = "455740278272425995";
 const annonce = "452800422655033365";
 const jack = "239310906981482496";
 const gryf = "187554016853622784";
-const gorj = (message.member.id === jack) || (message.member.id === gryf)
+const gorj = "(message.member.id === jack) || (message.member.id === gryf)";
 //end
 
 
