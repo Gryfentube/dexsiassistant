@@ -46,7 +46,7 @@ bot.on('message', message => {
             }
             else {
                 message.reply("tu ne peux pas faire ça"); //respond
-                455070342612910081').sendMessage(author + " a essayé d'annoncé " + value); //console
+                bot.channels.get('455070342612910081').sendMessage(author + " a essayé d'annoncé " + value); //console
             }
 break;
         case "activ":
