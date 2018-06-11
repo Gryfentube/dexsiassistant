@@ -68,17 +68,7 @@ break;
             
 break;
         case "sendrules":
-                const emo1 = guild.emojis.find("name", "1_");
-    const emo2 = guild.emojis.find("name", "2_");
-    const emo3 = guild.emojis.find("name", "3_");
-    const emo4 = guild.emojis.find("name", "4_");
-    const emo5 = guild.emojis.find("name", "5_");
-    const emo6 = guild.emojis.find("name", "6_");
-    const emo7 = guild.emojis.find("name", "7_");
-    const emo8 = guild.emojis.find("name", "8_");
-    const emo9 = guild.emojis.find("name", "9_");
-    const emo10 = guild.emojis.find("name", "10");
-    const emo11 = guild.emojis.find("name", "11");
+const emo1 = message.guild.emojis.find("name", "1_");
             var rules = bot.channels.get('452800240332963843');
             rules.sendMessage("```diff\n- Ces règles s'applique à tout le monde. Si tu ne les respecte pas c'est ton problème\n```")
             .then(rules.sendMessage("❖\n${emo1} __**Pas de spam.**__ Il est bon de poster quelques emoji de temps en temps, mais évitez d'en envoyer trop à la suite, ou le même emoji plusieurs fois. **Enfreindre cette règle sera passible d'un mute/kick.**"))
