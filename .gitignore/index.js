@@ -56,13 +56,6 @@ bot.on('message', message => {
     var args = message.content.substring(prefix.length).split(" ");
     var channelide = message.channel.id;
     switch (args[0].toLowerCase()){
-
-        case "say":
-            var value = message.content.substr(5);
-            else {
-                message.reply("tu ne peux pas faire ça"); //respond
-                bot.channels.get(consaule).sendMessage(author + " a essayé d'annoncé " + value); //console
-            }
 break;
         case "activ":
             var value = message.content.substr(7);
