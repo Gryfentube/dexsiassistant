@@ -48,20 +48,10 @@ bot.on('message', message => {
             if (gorj){
                 message.reply("Le message a été envoyé :D"); //respond
                 bot.channels.get(annonce).sendMessage(value); //annonce
-                bot.channels.get(consaule).send({embed: {
-    color: 3447003,
-    author: {
-      name: "Annonce effectué",
-      icon_url: message.member.avatarURL
-    },
-    title: "L'annonce :",
-    description: value,
-        footer: {
-      icon_url: message.member.avatarURL,
-      text: "l'annonce a été envoyé par" + author
-    }
-  }
-});; //console
+                bot.channels.get(consaule).send({embed: {color: 3447003, author: {name: "Annonce effectué",
+                                                icon_url: message.member.avatarURL},
+                                                title: "L'annonce :", description: value, footer: {
+                                                icon_url: message.member.avatarURL, text: "Auteur : " + author}}});; //console
             }
             else {
                 message.reply("tu ne peux pas faire ça"); //respond
