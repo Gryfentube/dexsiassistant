@@ -68,7 +68,7 @@ break;
             
 break;
         case "sendrules":
-                const emo1 = client.emojis.find("name", "1_");
+                const emo1 = guild.emojis.find("name", "1_");
     const emo2 = guild.emojis.find("name", "2_");
     const emo3 = guild.emojis.find("name", "3_");
     const emo4 = guild.emojis.find("name", "4_");
