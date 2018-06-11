@@ -17,6 +17,19 @@ bot.on('ready', () => {
     console.log("Le bot est prêt");
     bot.channels.get('455070342612910081').send("Je suis en ligne ! :D");
     
+    //EMOJI
+    const emo1 = client.emojis.find("name", "1_");
+    const emo2 = client.emojis.find("name", "2_");
+    const emo3 = client.emojis.find("name", "3_");
+    const emo4 = client.emojis.find("name", "4_");
+    const emo5 = client.emojis.find("name", "5_");
+    const emo6 = client.emojis.find("name", "6_");
+    const emo7 = client.emojis.find("name", "7_");
+    const emo8 = client.emojis.find("name", "8_");
+    const emo9 = client.emojis.find("name", "9_");
+    const emo10 = client.emojis.find("name", "10");
+    const emo11 = client.emojis.find("name", "11");
+    //EMOJI end
     
     
 });
@@ -66,8 +79,8 @@ break;
 break;
         case "sendrules":
             var rules = bot.channels.get('452800240332963843');
-            rules.sendMessage("❖\n:1_: Pas de spam. Il est bon de poster quelques emoji de temps en temps, mais évitez d'en envoyer trop à la suite, ou le même emoji plusieurs fois. Enfreindre cette règle sera passible d'un mute/kick.")
-            .then(rules.sendMessage("règle 2"))
+            rules.sendMessage("```diff\n- Ces règles s'applique à tout le monde. Si tu ne les respecte pas c'est ton problème\n```")
+            .then(rules.sendMessage("❖\n${emo1} __**Pas de spam.**__ Il est bon de poster quelques emoji de temps en temps, mais évitez d'en envoyer trop à la suite, ou le même emoji plusieurs fois. **Enfreindre cette règle sera passible d'un mute/kick.**"))
         break;
     }
 
