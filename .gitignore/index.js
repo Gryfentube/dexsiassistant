@@ -1,37 +1,36 @@
 const Discord = require('discord.js');
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
-
+const bot = new Discord.Client();
 const adapter = new FileSync('database.json');
 const db = low(adapter);
-
+    db.defaults({ ann:[]})
+        .write()
+bot.login(process.env.TOKEN);
 
 //salons DexSia Introduce YourSelf
-const annDXSIY = "452800422655033365"; //salon annonce DexSia Introduce Yourself
-    //Poel
+    const annDXSIY = "452800422655033365"; //salon annonce DexSia Introduce Yourself
+//Portal DexSia Introduce Yourself
     const annPoDXSIY = ""; //salon annonce de Portal Dxs IY
     const activitDXSIY = "455798472076034051"; //salon activité du bot DexSia Assistant
     const consauleDXSIY = "455740278272425995"; //salon console de Portal Dxs IY
 //salons DexSia
-const annDXS = "454994767877636098"; //salon annonce DexSia
-    //Poel
+    const annDXS = "454994767877636098"; //salon annonce DexSia
+//Portal DexSia
     const annPoDXS = "455740525807665172"; //salon annonce de Portal DexSia
     const activitDXS = "455836828214231082"; //salon activité du bot DexSia
     const consauleDXS = "455740246110240778"; //salon console de Portal DexSia
 //Admin
-const jack = "239310906981482496"; //Définir Jack avec son id
-const gryf = "187554016853622784"; //Définir Gryf avec son id
-const alladmin = "(message.member.id === jack) || (message.member.id === gryf)"; //Jack ou Gryf (dans un if généralement)
+    const jack = "239310906981482496"; //Définir Jack avec son id
+    const gryf = "187554016853622784"; //Définir Gryf avec son id
+    const alladmin = "(message.member.id === jack) || (message.member.id === gryf)"; //Jack ou Gryf (dans un if généralement)
 //end
 
-
-db.defaults({ ann:[]})
-    .write()
-var bot = new Discord.Client();
-var prefix = ("_");
+var prefix = ("_"); //définir le prefix du bot
 var activ = ("créer un monde sans limite"); //modifier la valeur entre guillemets pour changer son état au démarage
-var values = ("empty");
+var values = ("empty"); //empecher les soucis de values
 
+//event on démarrage
 bot.on('ready', () => {
     bot.user.setPresence({ game: { name: activ}});
     var annonce = db.get(`ann`).map('annonce').value();
@@ -39,17 +38,20 @@ bot.on('ready', () => {
     bot.channels.get(consauleDXSIY).send({embed: {color: 0x3ac400, author: {name: "Je suis en ligne :D",
       icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"}}})
 });
-
-bot.login(process.env.TOKEN);
-
+ //event on message
 bot.on('message', message => {
     var author = message.member.displayName;
-    if (message.channel.id === activitDXSIY) {
     var value = message.content;
-    bot.user.setPresence({ game: { name: value}})
-        .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0x202020, author: {name: "Je joue maintenant à " + value + " grâce à " + author,
-      icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"}}}))};
-    
+    if (message.channel.id === activitDXSIY) {
+        bot.user.setPresence({ game: { name: value}})
+            .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0x202020, author: {name: "Je joue maintenant à " + value + " grâce à " + author,
+                                                               icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"}}}))};
+
+    if (message.channel.id === annDXSIY){
+        bot.channels.get(annonce).sendMessage(value) //annonce
+            .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0x202020, author: {name: "Nouvelle annonce envoyé par" + author,
+                                                               icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"},
+                                                               fields: [value: value}]}}))};
     if (!message.content.startsWith(prefix)) return;
     var args = message.content.substring(prefix.length).split(" ");
     var channelide = message.channel.id;
@@ -57,14 +59,6 @@ bot.on('message', message => {
 
         case "say":
             var value = message.content.substr(5);
-            if (alladmin && (message.channel.id === annDXSIY)){
-                message.reply("Le message a été envoyé :D"); //respond
-                bot.channels.get(annonce).sendMessage(value); //annonce
-                bot.channels.get(consaule).send({embed: {color: 3447003, author: {name: "Annonce effectué",
-                                                icon_url: message.member.avatarURL},
-                                                title: "L'annonce :", description: value, footer: {
-                                                icon_url: message.member.avatarURL, text: "Auteur : " + author}}});; //console
-            }
             else {
                 message.reply("tu ne peux pas faire ça"); //respond
                 bot.channels.get(consaule).sendMessage(author + " a essayé d'annoncé " + value); //console
