@@ -8,6 +8,7 @@ const db = low(adapter);
 
 //salons admin
 const consaule = "455740278272425995";
+const sayincons = bot.channels.get(consaule);
 const annonce = "452800422655033365";
 const jack = "239310906981482496";
 const gryf = "187554016853622784";
@@ -24,7 +25,7 @@ bot.on('ready', () => {
     bot.user.setPresence({ game: { name: activ}});
     var annonce = db.get(`ann`).map('annonce').value();
     console.log("Le bot est prêt");
-    bot.channels.get(consaule).send("Je suis en ligne ! :D");
+    sayincons.send("Je suis en ligne ! :D");
 });
 
 bot.login(process.env.TOKEN);
