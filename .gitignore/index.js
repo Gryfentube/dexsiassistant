@@ -52,7 +52,7 @@ bot.on('message', message => {
 
         case "say":
             var value = message.content.substr(5);
-            if (alladmin && (message.channel.id === )){
+            if (alladmin && (message.channel.id === annDXSIY)){
                 message.reply("Le message a été envoyé :D"); //respond
                 bot.channels.get(annonce).sendMessage(value); //annonce
                 bot.channels.get(consaule).send({embed: {color: 3447003, author: {name: "Annonce effectué",
