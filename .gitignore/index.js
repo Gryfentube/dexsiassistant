@@ -55,7 +55,10 @@ bot.on('message', message => {
     },
     title: "L'annonce :",
     description: value,
-    timestamp: "l'annonce a été envoyé par" + author
+        footer: {
+      icon_url: message.member.avatarURL,
+      text: "l'annonce a été envoyé par" + author
+    }
   }
 });; //console
             }
