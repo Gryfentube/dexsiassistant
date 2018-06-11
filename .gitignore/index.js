@@ -48,8 +48,8 @@ bot.on('message', message => {
                                                                icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"}}}))};
 
     if (message.channel.id === annPoDXSIY){
-        bot.channels.get(annDXSIY).sendMessage({embed: {color: 0xff2492, fields: [{name: "ANNONCE", value: value}]}}) //annonce
-            .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xff2492, author: {name: "Nouvelle annonce envoyé par " + author,
+        bot.channels.get(annDXSIY).sendMessage({embed: {color: 0xe43281, fields: [{name: "ANNONCE", value: value}]}}) //annonce
+            .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xe43281, author: {name: "Nouvelle annonce envoyé par " + author,
                                                                icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"},
                                                                fields: [{name: "L'annonce est :", value: value}]}}))}; //console
     if (!message.content.startsWith(prefix)) return;
