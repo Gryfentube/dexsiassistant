@@ -71,7 +71,7 @@ break;
 const emo1 = message.guild.emojis.find("name", "1_");
             var rules = bot.channels.get('452800240332963843');
             rules.sendMessage("```diff\n- Ces règles s'applique à tout le monde. Si tu ne les respecte pas c'est ton problème\n```")
-            .then(rules.sendMessage("❖\n${emo1} __**Pas de spam.**__ Il est bon de poster quelques emoji de temps en temps, mais évitez d'en envoyer trop à la suite, ou le même emoji plusieurs fois. **Enfreindre cette règle sera passible d'un mute/kick.**"))
+            .then(rules.sendMessage("❖\n"+ emo1 + " __**Pas de spam.**__ Il est bon de poster quelques emoji de temps en temps, mais évitez d'en envoyer trop à la suite, ou le même emoji plusieurs fois. **Enfreindre cette règle sera passible d'un mute/kick.**"))
         break;
     }
 
