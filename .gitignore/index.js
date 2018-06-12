@@ -56,7 +56,7 @@ bot.on("guildMemberRemove", member => { //Quand un membre quitte dans le serveur
  //event on message
 bot.on('message', message => {
     var authorDN = message.member.displayName; //nom de l'auteur du message
-    var author = message.member.displayName.username; //username de l'auteur
+    var author = message.member.displayName; //username de l'auteur
     var TAGauthor = message.member.user.tag; //tag de l'auteur
     var DMauthor = message.member.user.dmChannel; //Message privé avec l'auteur
     var IDauthor = message.member.user.id; //id de l'auteur
@@ -148,9 +148,10 @@ break;
     if (message.content === "truc"){
         
     }
-    if (message.content === prefix + "help"){
-        message.channel.sendMessage("Ceci est une commandes :\n -/help pour les commandes");
-        console.log("Comme help prises");
+    if ((message.content === prefix + "everyone") && alladmin){
+        bot.channels.get(annDXSIY).sendMessage('@everyone')
+            .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xe43281, author: {name: "La commande _everyone a été envoyé par " + authorDN + " (" + TAGauthor + ") dans la channel #" + channame + " du serveur " + serveurname,
+                                                               icon_url: AVauthor}}}))
     }
     if (message.content === prefix + "frite"){
         var activ = ("Je mange une frite");
