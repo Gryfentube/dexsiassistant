@@ -62,7 +62,6 @@ bot.on('message', message => {
     var DMauthor = message.member.user.dmChannel; //Message privé avec l'auteur
     var IDauthor = message.member.user.id; //id de l'auteur
     var IDauthor = message.member.user.id; //id de l'auteur
-    var 
     var channelide = message.channel.id; //channel id
     var channame = message.channel.name; //channel name
     var serveurname = message.guild.name;  //seveur name
