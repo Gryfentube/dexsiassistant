@@ -55,8 +55,14 @@ bot.on("guildMemberRemove", member => { //Quand un membre quitte dans le serveur
 
  //event on message
 bot.on('message', message => {
-    var author = message.member.displayName; //nom de l'auteur du message
-    var author2 = message.client; //je sais pas encore
+    var authorDN = message.member.displayName; //nom de l'auteur du message
+    var author = message.member.displayName.username; //username de l'auteur
+    var TAGauthor = message.member.user.tag; //tag de l'auteur
+    var autag = author + TAGauthor; //usename de l'auteur plus son tag
+    var DMauthor = message.member.user.dmChannel; //Message privé avec l'auteur
+    var IDauthor = message.member.user.id; //id de l'auteur
+    var IDauthor = message.member.user.id; //id de l'auteur
+    var 
     var channelide = message.channel.id; //channel id
     var channame = message.channel.name; //channel name
     var serveurname = message.guild.name;  //seveur name
@@ -97,7 +103,7 @@ break;
 break;
         case "frog":           
             message.channel.sendMessage("🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 ⚪ ⚫ ⚫ ⚪ 🐸 🐸 🐸 ⚪ ⚫ ⚫ ⚪\n🐸 ⚪ ⚫ ⚫ ⚪ ⚫ ⚪ 🐸 ⚪ ⚫ ⚫ ⚪ ⚫ ⚪\n🐸 ⚪ ⚫ ⚪ ⚫ ⚫ ⚪ 🐸 ⚪ ⚫ ⚪ ⚫ ⚫ ⚪\n🐸 🐸 ⚪ ⚫ ⚪⚪ 🐸 🐸 🐸 ⚪ ⚫ ⚪ ⚪\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🔴 🔴 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🔴 🔴 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴\n🐸 🐸 🐸 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n")
-                .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xe43281, author: {name: "La commande _frog a été envoyé par " + author2 + " dans la channel #" + channame + " du serveur" + serveurname,
+                .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xe43281, author: {name: "La commande _frog a été envoyé par " + authorDN + "("autag") dans la channel #" + channame + " du serveur" + serveurname,
                                                                icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"}}}))
 break;
        /* case "sendrules":
