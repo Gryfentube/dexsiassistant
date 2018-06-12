@@ -11,7 +11,8 @@ bot.login(process.env.TOKEN);
 //salons DexSia Introduce YourSelf
     const annDXSIY = "452800422655033365"; //salon annonce DexSia Introduce Yourself
 //Portal DexSia Introduce Yourself
-    const annPoDXSIY = "455740492999688192"; //salon annonce de Portal Dxs IY
+    const annPoDXSIYemb = "455740492999688192"; //salon annonce de Portal Dxs IY
+    const annPoDXSIY = "456188249669632000";
     const activitDXSIY = "455798472076034051"; //salon activité du bot DexSia Assistant
     const consauleDXSIY = "455740278272425995"; //salon console de Portal Dxs IY
 //salons DexSia
@@ -71,6 +72,12 @@ bot.on('message', message => {
             .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0x202020, author: {name: "Je joue maintenant à " + value + " grâce à " + author,
                                                                icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"}}}))};
 
+    if (message.channel.id === annPoDXSIYemb){
+        bot.channels.get(annDXSIY).sendMessage('value') //annonce
+            .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xe43281, author: {name: "Nouvelle annonce envoyé par " + author,
+                                                               icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"},
+                                                               fields: [{name: "L'annonce est :", value: value}]}}))}; //console
+    
     if (message.channel.id === annPoDXSIY){
         bot.channels.get(annDXSIY).sendMessage({embed: {color: 0xe43281, fields: [{name: "ANNONCE", value: value}]}}) //annonce
             .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xe43281, author: {name: "Nouvelle annonce envoyé par " + author,
