@@ -38,14 +38,6 @@ bot.on('ready', () => {
     bot.channels.get(consauleDXSIY).send({embed: {color: 0x3ac400, author: {name: "Je suis en ligne :D",
       icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"}}})
 });
- //event on message
-bot.on('message', message => {
-    var author = message.member.displayName;
-    var value = message.content;
-    if (message.channel.id === activitDXSIY) {
-        bot.user.setPresence({ game: { name: value}})
-            .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0x202020, author: {name: "Je joue maintenant à " + value + " grâce à " + author,
-                                                               icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"}}}))};
 
 bot.on("guildMemberAdd", member => { //Quand un membre entre dans le serveur
     var welcomeDXSIY = member.guild.channels.find("name", "welcome"); //variable pour le salon welcome
@@ -61,6 +53,19 @@ bot.on("guildMemberRemove", member => { //Quand un membre quitte dans le serveur
     .then(bot.channels.get(consauleDXSIY).sendMessage(member.user + " a quitté la DexSia, le message s'est bien affiché"));  //console
 });
 
+ //event on message
+bot.on('message', message => {
+    var author = message.member.displayName; //nom de l'auteur du message
+    var author2 = message.client; //je sais pas encore
+    var channelide = message.channel.id; //channel id
+    var channame = message.channel.name; //channel name
+    var serveurname = message.guild.name;  //seveur name
+    var value = message.content;
+    if (message.channel.id === activitDXSIY) {
+        bot.user.setPresence({ game: { name: value}})
+            .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0x202020, author: {name: "Je joue maintenant à " + value + " grâce à " + author,
+                                                               icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"}}}))};
+
     if (message.channel.id === annPoDXSIY){
         bot.channels.get(annDXSIY).sendMessage({embed: {color: 0xe43281, fields: [{name: "ANNONCE", value: value}]}}) //annonce
             .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xe43281, author: {name: "Nouvelle annonce envoyé par " + author,
@@ -68,9 +73,6 @@ bot.on("guildMemberRemove", member => { //Quand un membre quitte dans le serveur
                                                                fields: [{name: "L'annonce est :", value: value}]}}))}; //console
     if (!message.content.startsWith(prefix)) return;
     var args = message.content.substring(prefix.length).split(" ");
-    var channelide = message.channel.id; //channel id
-    var channame = message.channel.name; //channel name
-    var serveurname = message.guild.name;  //seveur name
     switch (args[0].toLowerCase()){
         case "activ":
             var value = message.content.substr(7);
@@ -95,7 +97,7 @@ break;
 break;
         case "frog":           
             message.channel.sendMessage("🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 ⚪ ⚫ ⚫ ⚪ 🐸 🐸 🐸 ⚪ ⚫ ⚫ ⚪\n🐸 ⚪ ⚫ ⚫ ⚪ ⚫ ⚪ 🐸 ⚪ ⚫ ⚫ ⚪ ⚫ ⚪\n🐸 ⚪ ⚫ ⚪ ⚫ ⚫ ⚪ 🐸 ⚪ ⚫ ⚪ ⚫ ⚫ ⚪\n🐸 🐸 ⚪ ⚫ ⚪⚪ 🐸 🐸 🐸 ⚪ ⚫ ⚪ ⚪\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🔴 🔴 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🔴 🔴 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴\n🐸 🐸 🐸 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n")
-                .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xe43281, author: {name: "La commande _frog a été envoyé par " + author + " dans la channel #" + channame + " du serveur" + serveurname,
+                .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xe43281, author: {name: "La commande _frog a été envoyé par " + author2 + " dans la channel #" + channame + " du serveur" + serveurname,
                                                                icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"}}}))
 break;
        /* case "sendrules":
