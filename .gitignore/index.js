@@ -57,8 +57,8 @@ bot.on("guildMemberAdd", member => { //Quand un membre entre dans le serveur
 bot.on("guildMemberRemove", member => { //Quand un membre quitte dans le serveur
     const sad = message.guild.emojis.find("name", "sad");
     var aurevoirDXSIY = member.guild.channels.find("name", "left"); //variable pour le salon aurevoir
-    bot.channels.get('452815373700694017').sendMessage('**' + member.displayName + '** nous a quitté paix à son âme ' + sad);//envoie le message de aurevoir
-    bot.channels.get(consauleDXSIY).sendMessage(member.user + " a quitté la DexSia, le message s'est bien affiché");  //console
+    bot.channels.get('452815373700694017').sendMessage('**' + member.displayName + '** nous a quitté paix à son âme ' + sad)//envoie le message de aurevoir
+    .then(bot.channels.get(consauleDXSIY).sendMessage(member.user + " a quitté la DexSia, le message s'est bien affiché"));  //console
 });
 
     if (message.channel.id === annPoDXSIY){
