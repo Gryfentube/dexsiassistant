@@ -25,6 +25,7 @@ bot.login(process.env.TOKEN);
     const gryf = "187554016853622784"; //Définir Gryf avec son id
     const alladmin = "(message.member.id === jack) || (message.member.id === gryf)"; //Jack ou Gryf (dans un if généralement)
 //end
+    const sad = message.guild.emojis.find("name", "sad");
 
 var prefix = ("_"); //définir le prefix du bot
 var activ = ("créer un monde sans limite"); //modifier la valeur entre guillemets pour changer son état au démarage
@@ -54,7 +55,6 @@ bot.on("guildMemberAdd", member => { //Quand un membre entre dans le serveur
 });
 
 bot.on("guildMemberRemove", member => { //Quand un membre quitte dans le serveur
-    const sad = message.guild.emojis.find("name", "sad");
     var aurevoirDXSIY = member.guild.channels.find("name", "left"); //variable pour le salon aurevoir
     bot.channels.get('452815373700694017').sendMessage('**' + member.displayName + '** nous a quitté paix à son âme ' + sad) //envoie le message de aurevoir
     bot.channels.get(consauleDXSIY).sendMessage(member.user + " a quitté la DexSia, le message s'est bien affiché")  //console
