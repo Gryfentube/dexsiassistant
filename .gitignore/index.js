@@ -3,6 +3,8 @@ const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const bot = new Discord.Client();
 const adapter = new FileSync('database.json');
+const ytdl = require('ytdl-core');
+const streamOptions = { seek: 0, volume: 1 };
 const db = low(adapter);
     db.defaults({ ann:[]})
         .write()
@@ -115,6 +117,14 @@ break;
             message.channel.sendMessage("🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 ⚪ ⚫ ⚫ ⚪ 🐸 🐸 🐸 ⚪ ⚫ ⚫ ⚪\n🐸 ⚪ ⚫ ⚫ ⚪ ⚫ ⚪ 🐸 ⚪ ⚫ ⚫ ⚪ ⚫ ⚪\n🐸 ⚪ ⚫ ⚪ ⚫ ⚫ ⚪ 🐸 ⚪ ⚫ ⚪ ⚫ ⚫ ⚪\n🐸 🐸 ⚪ ⚫ ⚪⚪ 🐸 🐸 🐸 ⚪ ⚫ ⚪ ⚪\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🔴 🔴 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🔴 🔴 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴\n🐸 🐸 🐸 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴 🔴\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸 🐸\n")
                 .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xe43281, author: {name: "La commande _frog a été envoyé par " + authorDN + " (" + TAGauthor + ") dans la channel #" + channame + " du serveur " + serveurname,
                                                                icon_url: AVauthor}}}))
+break;
+        case "plau":
+            voiceChannel.join()
+                .then(connection => {
+                        const stream = ytdl('https://www.youtube.com/watch?v=XAWgeLF9EVQ', { filter : 'audioonly' });
+                        const dispatcher = connection.playStream(stream, streamOptions);
+                    })
+                    .catch(console.error);
 break;
        /* case "sendrules":
                 
