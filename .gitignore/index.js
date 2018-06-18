@@ -127,7 +127,7 @@ break;
                     .catch(console.error);
 break;
         case "deco":
-            bot.voiceChannel.leave(message.author.voiceChannel);
+            bot.voiceChannel.leave();
 break;
        /* case "sendrules":
                 
