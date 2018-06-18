@@ -29,8 +29,7 @@ bot.login(process.env.TOKEN);
     const alladmin = "(message.member.id === jack) || (message.member.id === gryf)"; //Jack ou Gryf (dans un if généralement)
 //end
 
-//log
-    var logger = 
+//loG
 
 var prefix = ("_"); //définir le prefix du bot
 var activ = ("créer un monde sans limite"); //modifier la valeur entre guillemets pour changer son état au démarage
