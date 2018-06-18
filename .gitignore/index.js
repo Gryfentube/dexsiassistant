@@ -27,6 +27,9 @@ bot.login(process.env.TOKEN);
     const alladmin = "(message.member.id === jack) || (message.member.id === gryf)"; //Jack ou Gryf (dans un if généralement)
 //end
 
+//log
+    var logger = 
+
 var prefix = ("_"); //définir le prefix du bot
 var activ = ("créer un monde sans limite"); //modifier la valeur entre guillemets pour changer son état au démarage
 var values = ("empty"); //empecher les soucis de values
@@ -67,6 +70,7 @@ bot.on('message', message => {
     var channame = message.channel.name; //channel name
     var serveurname = message.guild.name;  //seveur name
     var value = message.content;
+    
     if (message.channel.id === activitDXSIY) {
         bot.user.setPresence({ game: { name: value}})
             .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0x202020, author: {name: "Je joue maintenant à " + value + " grâce à " + author,
