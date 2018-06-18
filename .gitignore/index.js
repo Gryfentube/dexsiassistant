@@ -118,7 +118,7 @@ break;
                                                                icon_url: AVauthor}}}))
 break;
         case "plau":
-            voiceChannel.join()
+            message.member.voiceChannel.join()
                 .then(connection => {
                         const stream = ytdl('https://www.youtube.com/watch?v=XAWgeLF9EVQ', { filter : 'audioonly' });
                         const dispatcher = connection.playStream(stream, streamOptions);
