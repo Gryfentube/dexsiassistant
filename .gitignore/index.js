@@ -126,6 +126,9 @@ break;
                     })
                     .catch(console.error);
 break;
+        case "deco":
+            voiceChannel.disconnect()
+break;
        /* case "sendrules":
                 
     const emo1 = message.guild.emojis.find("name", "1_");
