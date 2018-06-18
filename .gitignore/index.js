@@ -118,9 +118,10 @@ break;
                                                                icon_url: AVauthor}}}))
 break;
         case "plau":
+            var value = message.content.substr(5);
             message.member.voiceChannel.join()
                 .then(connection => {
-                        const stream = ytdl('https://www.youtube.com/watch?v=XAWgeLF9EVQ', { filter : 'audioonly' });
+                        const stream = ytdl(value, { filter : 'audioonly' });
                         const dispatcher = connection.playStream(stream, streamOptions);
                     })
                     .catch(console.error);
