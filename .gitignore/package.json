@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.2.1",
-    "lowdb": "^1.0.0"
+    "lowdb": "^1.0.0"?
+    "ytdl-core": "^0.20.4"
   },
   "engines": {
     "npm": "5.7.1"
