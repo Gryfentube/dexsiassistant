@@ -5,6 +5,7 @@ const bot = new Discord.Client();
 const adapter = new FileSync('database.json');
 const ytdl = require('ytdl-core');
 const streamOptions = { seek: 0, volume: 1 };
+const fs = require('fs');
 const db = low(adapter);
     db.defaults({ ann:[]})
         .write()
@@ -126,10 +127,8 @@ break;
                     }).catch(console.error);
             message.channel.sendMessage("Ça va swinguer");
         case "play":
-            const fs = require('fs');
-            const ytdl = require('ytdl-core');
- 
-            ytdl('http://www.youtube.com/watch?v=A02s8omM_hI')
+            var value = message.content.substr(5);
+            ytdl(value)
                 .pipe(fs.createWriteStream('video.flv'));
 break;
         case "deco":
