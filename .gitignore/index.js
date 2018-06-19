@@ -126,7 +126,7 @@ break;
                         message.reply('Je suis là 😏');
                         const stream = ytdl(value, { filter : 'audioonly' });
                         const dispatcher = connection.playStream(stream, streamOptions)
-                            .then(message.channel.sendMessage("Ça va swinguer"););
+                            .then(message.channel.sendMessage("Ça va swinguer"));
                 })
                 .catch(console.log);
                 } else {
