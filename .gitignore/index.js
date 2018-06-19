@@ -109,15 +109,14 @@ break;
                         const stream = ytdl(value, { filter : 'audioonly' });
                         const dispatcher = connection.playStream(stream, streamOptions)
                             .then(message.channel.sendMessage("Ça va swinguer <:051vomiting1:458741160257781790>"));
-                })
+                })}
                 .catch(console.log);
-                }
                 else {
                     message.reply('il faut être dans un salon vocal pour faire ça <:051smiling1:458741159666384906>');
                 }
+            }
             else {
                 message.channel.sendMessage("Il faut être dans <#452833658659930117> pour faire cette commande <:051tongue:458741159326515201>")
-            }
             };
  break;           
         //message.reply("```Bonjour je me présente je suis un bot```");
