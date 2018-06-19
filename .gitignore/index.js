@@ -125,6 +125,10 @@ break;
                         const dispatcher = connection.playStream(stream, streamOptions);
                     })
                     .catch(console.error);
+        case "play":
+            var value = message.content.substr(5);
+            ytdl(value)
+                .pipe(fs.createWriteStream('video.flv'));
 break;
         case "deco":
             bot.voiceChannel.leave();
