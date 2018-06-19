@@ -126,11 +126,6 @@ break;
                         const dispatcher = connection.playStream(stream, streamOptions);
                     }).catch(console.error);
             message.channel.sendMessage("Ça va swinguer");
-        case "play":
-            var value = message.content.substr(5);
-            ytdl(value)
-                .pipe(fs.createWriteStream('video.flv'));
-break;
         case "deco":
             bot.voiceChannel.leave();
 break;
