@@ -112,7 +112,7 @@ break;
                         message.reply('Je suis là <:051smile:458741156017078273>');
                         const stream = ytdl(value, { filter : 'audioonly' });
                         const dispatcher = connection.playStream(stream, streamOptions)
-                            .then(message.channel.sendMessage("Ça va swinguer <:051vomiting1:458741160257781790>"));}
+                            .then(message.channel.sendMessage("Ça va swinguer <:051vomiting1:458741160257781790>"));})
                    
 
                 })}
