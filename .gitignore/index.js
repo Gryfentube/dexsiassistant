@@ -120,12 +120,18 @@ break;
 break;
         case "plau":
             var value = message.content.substr(5);
-            message.member.voiceChannel.join()
-                .then(connection => {
+                if (message.member.voiceChannel) {
+                        message.member.voiceChannel.join()
+                            .then(connection => { // quand il se connecte
+                        message.reply('Je suis là 😏');
                         const stream = ytdl(value, { filter : 'audioonly' });
-                        const dispatcher = connection.playStream(stream, streamOptions);
-                    }).catch(console.error);
-            message.channel.sendMessage("Ça va swinguer");
+                        const dispatcher = connection.playStream(stream, streamOptions)
+                            .then(message.channel.sendMessage("Ça va swinguer"););
+                })
+                .catch(console.log);
+                } else {
+                    message.reply('Va dans un salon vocal mongolo !');
+                }
         case "deco":
             bot.voiceChannel.leave();
 break;
@@ -168,7 +174,21 @@ break;
             .then(rules.sendMessage(emo11+ rules11))))))))))));
         break; */
     }
+    
+    if (!message.guild) return;
 
+  if (message.content === '_vien') {
+    if (message.member.voiceChannel) {
+      message.member.voiceChannel.join()
+        .then(connection => { // quand il se connecte
+          message.reply('Je suis là 😏');
+        })
+        .catch(console.log);
+    } else {
+      message.reply('Va dans un salon vocal mongolo !');
+    }
+  }
+    
     if (message.content === "truc"){
         
     }
