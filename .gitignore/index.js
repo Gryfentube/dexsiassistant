@@ -103,12 +103,18 @@ break;
             if (message.channel.id === musicbot) {
                var value = message.content.substr(5);
                if (message.member.voiceChannel) {
+                   if (value === "empty"){
+                       message.reply('il faut que tu entres un lien <:051smiling1:458741159666384906>');
+                       }
+                   else {
                         message.member.voiceChannel.join()
                             .then(connection => { // quand il se connecte
                         message.reply('Je suis là <:051smile:458741156017078273>');
                         const stream = ytdl(value, { filter : 'audioonly' });
                         const dispatcher = connection.playStream(stream, streamOptions)
-                            .then(message.channel.sendMessage("Ça va swinguer <:051vomiting1:458741160257781790>"));
+                            .then(message.channel.sendMessage("Ça va swinguer <:051vomiting1:458741160257781790>"));}
+                   
+
                 })}
                 else {
                     message.reply('il faut être dans un salon vocal pour faire ça <:051smiling1:458741159666384906>');
