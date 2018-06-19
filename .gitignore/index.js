@@ -123,11 +123,13 @@ break;
                 .then(connection => {
                         const stream = ytdl(value, { filter : 'audioonly' });
                         const dispatcher = connection.playStream(stream, streamOptions);
-                    })
-                    .catch(console.error);
+                    }).catch(console.error);
+            message.channel.sendMessage("Ça va swinguer");
         case "play":
-            var value = message.content.substr(5);
-            ytdl(value)
+            const fs = require('fs');
+            const ytdl = require('ytdl-core');
+ 
+            ytdl('http://www.youtube.com/watch?v=A02s8omM_hI')
                 .pipe(fs.createWriteStream('video.flv'));
 break;
         case "deco":
