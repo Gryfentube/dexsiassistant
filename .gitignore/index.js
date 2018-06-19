@@ -13,6 +13,7 @@ bot.login(process.env.TOKEN);
 
 //salons DexSia Introduce YourSelf
     const annDXSIY = "452800422655033365"; //salon annonce DexSia Introduce Yourself
+    const musicbot = "452833658659930117"; //salon music bot
 //Portal DexSia Introduce Yourself
     const annPoDXSIYemb = "455740492999688192"; //salon annonce de Portal Dxs IY
     const annPoDXSIY = "456188249669632000";
@@ -88,6 +89,7 @@ bot.on('message', message => {
             .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xe43281, author: {name: "Nouvelle annonce envoyé par " + author,
                                                                icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"},
                                                                fields: [{name: "L'annonce est :", value: value}]}}))}; //console
+    
     if (!message.content.startsWith(prefix)) return;
     var args = message.content.substring(prefix.length).split(" ");
     switch (args[0].toLowerCase()){
@@ -97,6 +99,27 @@ bot.on('message', message => {
                 bot.user.setPresence({ game: { name: value}});
             }
 break;
+            case "music":
+            if (message.channel.id === musicbot) {
+               var value = message.content.substr(5);
+               if (message.member.voiceChannel) {
+                        message.member.voiceChannel.join()
+                            .then(connection => { // quand il se connecte
+                        message.reply('Je suis là <:051smile:458741156017078273>');
+                        const stream = ytdl(value, { filter : 'audioonly' });
+                        const dispatcher = connection.playStream(stream, streamOptions)
+                            .then(message.channel.sendMessage("Ça va swinguer <:051vomiting1:458741160257781790>"));
+                })
+                .catch(console.log);
+                }
+                else {
+                    message.reply('il faut être dans un salon vocal pour faire ça <:051smiling1:458741159666384906>');
+                }
+            else {
+                message.channel.sendMessage("Il faut être dans <#452833658659930117> pour faire cette commande <:051tongue:458741159326515201>")
+            }
+            };
+ break;           
         //message.reply("```Bonjour je me présente je suis un bot```");
         case "parler":
         var channelide = message.channel.id;
@@ -120,21 +143,7 @@ break;
         case "voice":
             var idoice = bot.voiceChannel;
             message.channel.sendMessage(idoice);
-break;
-        case "plau":
-            var value = message.content.substr(5);
-                if (message.member.voiceChannel) {
-                        message.member.voiceChannel.join()
-                            .then(connection => { // quand il se connecte
-                        message.reply('Je suis là 😏');
-                        const stream = ytdl(value, { filter : 'audioonly' });
-                        const dispatcher = connection.playStream(stream, streamOptions)
-                            .then(message.channel.sendMessage("Ça va swinguer"));
-                })
-                .catch(console.log);
-                } else {
-                    message.reply('Va dans un salon vocal mongolo !');
-                }
+break;            
         case "deco":
             bot.voiceChannel.leave();
 break;
