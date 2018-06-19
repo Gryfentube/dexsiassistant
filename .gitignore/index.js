@@ -99,7 +99,7 @@ bot.on('message', message => {
                 bot.user.setPresence({ game: { name: value}});
             }
 break;
-            case "music":
+            case "play":
             if (message.channel.id === musicbot) {
                var value = message.content.substr(5);
                if (message.member.voiceChannel) {
