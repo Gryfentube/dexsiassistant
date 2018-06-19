@@ -120,6 +120,7 @@ break;
 break;
         case "voice":
             var idoice = bot.voiceChannel;
+            message.channel.sendMessage(idoice);
 break;
         case "plau":
             var value = message.content.substr(5);
