@@ -118,6 +118,9 @@ break;
                 .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xe43281, author: {name: "La commande _frog a été envoyé par " + authorDN + " (" + TAGauthor + ") dans la channel #" + channame + " du serveur " + serveurname,
                                                                icon_url: AVauthor}}}))
 break;
+        case "voice":
+            var idoice = bot.voiceChannel;
+break;
         case "plau":
             var value = message.content.substr(5);
                 if (message.member.voiceChannel) {
