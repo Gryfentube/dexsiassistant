@@ -177,11 +177,8 @@ break;
             .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xe43281, author: {name: "La commande _everyone a été envoyé par " + authorDN + " (" + TAGauthor + ") dans la channel #" + channame + " du serveur " + serveurname,
                                                                icon_url: AVauthor}}}))
     }
-    if (message.content === prefix + "frite"){
-        var activ = ("Je mange une frite");
-        bot.user.setPresence({ game: { name: activ}});
-        console.log("tu fais quoi là");
-        console.log(activ);
+    if (message.content === prefix + "disc"){
+        bot.voiceChannel.leave();
     }
         if (message.content === prefix + "truc"){
             message.reply(message.channel.id)
