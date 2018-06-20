@@ -47,15 +47,14 @@ bot.on('ready', () => {
 });
 
 bot.on("guildMemberAdd", member => { //Quand un membre entre dans le serveur
-    var welcomeDXSIY = member.guild.channels.find("name", "welcome"); //variable pour le salon welcome
-    bot.channels.get(welcomeDXSIY).sendMessage('Hey' + member.user + ', Bienvenue sur le serveur **Dexsia | Introduce Yourself** <:051happy1:458741130708779028><:051happy2:458741131627331605> !\nPour rejoindre le groupe fais !member dans <#452973331042402304> et envoie nous ta candidature.\nBienvenue et passe un bon moment dans la DexSia <:051angel:458741109925871676>')//envoie le message de bienvenue
+    bot.channels.get('452796717738491904').sendMessage('Hey' + member.user + ', Bienvenue sur le serveur **Dexsia | Introduce Yourself** <:051happy1:458741130708779028><:051happy2:458741131627331605> !\nPour rejoindre le groupe fais !member dans <#452973331042402304> et envoie nous ta candidature.\nBienvenue et passe un bon moment dans la DexSia <:051angel:458741109925871676>')//envoie le message de bienvenue
         .then(bot.channels.get(consauleDXSIY).sendMessage(member.user + " est arrivé dans la DexSia, le message s'est bien affiché"));  //console
 
 });
 
 bot.on("guildMemberRemove", member => { //Quand un membre quitte dans le serveur
     var aurevoirDXSIY = member.guild.channels.find("name", "left"); //variable pour le salon aurevoir
-    bot.channels.get(aurevoirDXSIY).sendMessage('**' + member.displayName + '** nous a quitté, paix à son âme... <:051cry:458741122169044994>')//envoie le message de aurevoir
+    bot.channels.get('452815373700694017').sendMessage('**' + member.displayName + '** nous a quitté, paix à son âme... <:051cry:458741122169044994>')//envoie le message de aurevoir
         .then(bot.channels.get(consauleDXSIY).sendMessage(member.user + " a quitté la DexSia | Introduce Yourself, le message s'est bien affiché"));  //console
 });
 
