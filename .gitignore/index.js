@@ -103,7 +103,7 @@ break;
             if (message.channel.id === musicbot) {
                var value = message.content.substr(5);
                if (message.member.voiceChannel) {
-                   if (value === "empty"){
+                   if (value === ""){
                        message.reply('il faut que tu entres un lien <:051smiling1:458741159666384906>');
                        }
                    else {
