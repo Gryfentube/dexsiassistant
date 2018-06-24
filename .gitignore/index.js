@@ -80,7 +80,7 @@ bot.on('message', message => {
         if (heure = 24) {var heure = 1}
         if (heure < 10) {heure = "0" + heure}
         if (minute < 10) {minute = "0" + minute}
-        var date = heure + ":" + ;
+        var date = heure + ":" + minute;
         message.reply('Il est ' + date + ' mais je te pris de ne pas me traiter de pute');
     }
     if (message.channel.id === activitDXSIY) {
