@@ -221,7 +221,8 @@ break;
     }
     if (message.content === "heure"){
         var ladate = new Date();
-        message.reply('Il est ' + ladate.getHours() + ':' + ladate.getMinutes() + ' mais je te pris de ne pas me traiter de pute');
+        message.reply('Il est ' + ladate.getHours() + ':' + ladate.getMinutes());
+        message.reply('Mais je te pris de ne pas me traiter de pute')
     }
     if ((message.content === prefix + "everyone") && alladmin){
         bot.channels.get(annDXSIY).sendMessage('@everyone')
