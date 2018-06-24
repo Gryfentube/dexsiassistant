@@ -235,5 +235,8 @@ break;
         if (message.content === prefix + "truc"){
             message.reply(message.channel.id)
     }
+    if (message.content === prefix + "heure"){
+            message.reply(message.createdTimestamp)
+    }
 
 });
