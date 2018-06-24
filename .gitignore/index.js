@@ -74,7 +74,9 @@ bot.on('message', message => {
     
     if (message.content === "Eh sale pute, il est quelle heure ?"){
         var ladate = message.createdAt;
-        var date = ladate.getHours() + ":" + ladate.getMinutes();
+        var heure = ladate.getHours() + 2;
+        
+        var date = heure + ":" + ladate.getMinutes();
         message.reply('Il est ' + date + ' mais je te pris de ne pas me traiter de pute');
     }
     if (message.channel.id === activitDXSIY) {
