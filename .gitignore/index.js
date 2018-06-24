@@ -216,7 +216,8 @@ break;
   }
     
     if (message.content === ladateplease){
-        var date = message.createdAt;
+        var ladate = message.createdAt;
+        var date = ladate.getHours() + ":" + ladate.getMinutes();
         message.reply('Il est ' + date + ' mais je te pris de ne pas me traiter de pute');
     }
     if (message.content === "heure"){
