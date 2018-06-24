@@ -219,6 +219,10 @@ break;
         var ladate = new Date();
         message.reply('Il est ' + ladate.getHours() + ':' + ladate.getMinutes() + ' mais je te pris de ne pas me traiter de pute');
     }
+    if (message.content === "heure"){
+        var ladate = new Date();
+        message.reply('Il est ' + ladate.getHours() + ':' + ladate.getMinutes() + ' mais je te pris de ne pas me traiter de pute');
+    }
     if ((message.content === prefix + "everyone") && alladmin){
         bot.channels.get(annDXSIY).sendMessage('@everyone')
             .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xe43281, author: {name: "La commande _everyone a été envoyé par " + authorDN + " (" + TAGauthor + ") dans la channel #" + channame + " du serveur " + serveurname,
