@@ -216,7 +216,8 @@ break;
   }
     
     if (message.content === "Eh sale pute, il est quelle heure ?"){
-        message.reply('Il est inserer heure mais je te pris de ne pas me traiter de pute');
+        var date = message.createdAt;
+        message.reply('Il est ' + date + ' mais je te pris de ne pas me traiter de pute');
     }
     if (message.content === "heure"){
         var ladate = new Date();
