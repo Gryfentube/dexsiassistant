@@ -30,7 +30,7 @@ bot.login(process.env.TOKEN);
     const gryf = "187554016853622784"; //Définir Gryf avec son id
     const alladmin = "(message.member.id === jack) || (message.member.id === gryf)"; //Jack ou Gryf (dans un if généralement)
 //end
-
+var ladateplease = "Eh sale pute, il est quelle heure ?";
 //loG
 
 var prefix = ("_"); //définir le prefix du bot
@@ -215,7 +215,7 @@ break;
     }
   }
     
-    if (message.content === "Eh sale pute, il est quelle heure ?"){
+    if (message.content === ladateplease){
         var date = message.createdAt;
         message.reply('Il est ' + date + ' mais je te pris de ne pas me traiter de pute');
     }
