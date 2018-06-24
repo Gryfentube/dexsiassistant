@@ -72,6 +72,11 @@ bot.on('message', message => {
     var serveurname = message.guild.name;  //seveur name
     var value = message.content;
     
+    if (message.content === "Eh sale pute, il est quelle heure ?"){
+        var ladate = message.createdAt;
+        var date = ladate.getHours() + ":" + ladate.getMinutes();
+        message.reply('Il est ' + date + ' mais je te pris de ne pas me traiter de pute');
+    }
     if (message.channel.id === activitDXSIY) {
         bot.user.setPresence({ game: { name: value}})
             .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0x202020, author: {name: "Je joue maintenant à " + value + " grâce à " + author,
