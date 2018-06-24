@@ -215,14 +215,12 @@ break;
     }
   }
     
-    if (message.content === ladateplease){
+    if (message.content === "Eh sale pute, il est quelle heure ?"){
         var ladate = message.createdAt;
         var date = ladate.getHours() + ":" + ladate.getMinutes();
         message.reply('Il est ' + date + ' mais je te pris de ne pas me traiter de pute');
     }
     if (message.content === "heure"){
-        var ladate = new Date();
-        message.reply('Il est ' + ladate.getHours() + ':' + ladate.getMinutes());
         message.reply('Mais je te pris de ne pas me traiter de pute')
     }
     if ((message.content === prefix + "everyone") && alladmin){
