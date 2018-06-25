@@ -43,14 +43,14 @@ bot.on('ready', () => {
     var annonce = db.get(`ann`).map('annonce').value();
     console.log("Le bot est prêt");
     bot.channels.get(consauleDXSIY).send({"embed": {"description": "Je viens de me réveiller <:051sleeping:458741159062405141>",
-    "url": "https://discordapp.com","color": 9870700,
+    "url": "https://discordapp.com","color": 0xff00ff,
     "footer": {"icon_url": "https://cdn.discordapp.com/avatars/187554016853622784/c1b99f9544449ccf970be063e5ea6716.png",
       "text": "Je joue à " + activ},
     "thumbnail": {"url": "https://cdn.discordapp.com/icons/452444449608302602/13a579dd19b7b36b39bd1aa6f0b2751a.png"},
     "image": {"url": "https://fsmedia.imgix.net/05/a9/aa/5c/261b/4afa/a99c/ac32c5c1b81e/vault-boy.png?rect=0%2C120%2C1116%2C558&auto=format%2Ccompress&w=650"},
     "author": {"name": "Je suis en ligne :D",
-      "url": "https://discordapp.com",
-      "icon_url": ""}}})
+      "url": "",
+      "icon_url": "https://www.google.fr/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwimp_H3ve7bAhXCVBQKHQ3SAZMQjRx6BAgBEAU&url=https%3A%2F%2Fwww.slashgear.com%2Fdiscord-is-giving-racist-alt-right-servers-the-banhammer-14495094%2F&authuser=1&psig=AOvVaw3ICry-JyBPKJa4oTPeI4Pg&ust=1530004729463569"}}})
 });
 
 bot.on("guildMemberAdd", member => { //Quand un membre entre dans le serveur
