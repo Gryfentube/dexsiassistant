@@ -76,8 +76,8 @@ bot.on('message', message => {
         var ladate = message.createdAt;
         var minute = ladate.getMinutes();
         var heure = ladate.getHours() + 2;
-        if (heure = 24) {var heure = 0}
-        if (heure = 25) {var heure = 1}
+        if (heure === 24) {var heure = 0}
+        if (heure === 25) {var heure = 1}
         if (heure < 10) {heure = "0" + heure}
         if (minute < 10) {minute = "0" + minute}
         var date = heure + ":" + minute;
