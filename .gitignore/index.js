@@ -39,11 +39,26 @@ var values = ("empty"); //empecher les soucis de values
 
 //event on démarrage
 bot.on('ready', () => {
+    var ladate = message.createdAt;
+    var minute = ladate.getMinutes();
+    var heure = ladate.getHours() + 2;
+    if (heure === 24) {var heure = 0}
+    if (heure === 25) {var heure = 1}
+    if (heure < 10) {heure = "0" + heure}
+    if (minute < 10) {minute = "0" + minute}
+    var date = heure + ":" + minute;
     bot.user.setPresence({ game: { name: activ}});
     var annonce = db.get(`ann`).map('annonce').value();
     console.log("Le bot est prêt");
-    bot.channels.get(consauleDXSIY).send({embed: {color: 0x3ac400, author: {name: "Je suis en ligne :D",
-      icon_url: "https://image.flaticon.com/icons/svg/840/840513.svg"}}})
+    bot.channels.get(consauleDXSIY).send({"embed": {"description": "Je viens de me réveiller <:051sleeping:458741159062405141>",
+    "url": "https://discordapp.com","color": 9870700,
+    "footer": {"icon_url": "https://cdn.discordapp.com/avatars/187554016853622784/c1b99f9544449ccf970be063e5ea6716.png",
+      "text": "Il est" + date},
+    "thumbnail": {"url": "https://cdn.discordapp.com/icons/452444449608302602/13a579dd19b7b36b39bd1aa6f0b2751a.png"},
+    "image": {"url": "https://fsmedia.imgix.net/05/a9/aa/5c/261b/4afa/a99c/ac32c5c1b81e/vault-boy.png?rect=0%2C120%2C1116%2C558&auto=format%2Ccompress&w=650"},
+    "author": {"name": "Je suis en ligne :D",
+      "url": "https://discordapp.com",
+      "icon_url": ""}}})
 });
 
 bot.on("guildMemberAdd", member => { //Quand un membre entre dans le serveur
@@ -81,7 +96,7 @@ bot.on('message', message => {
         if (heure < 10) {heure = "0" + heure}
         if (minute < 10) {minute = "0" + minute}
         var date = heure + ":" + minute;
-        message.reply('Il est ' + date + ' mais je te pris de ne pas me traiter de pute');
+        message.reply('il est ' + date + ' mais je te pris de ne pas me traiter de pute');
     }
     if (message.channel.id === activitDXSIY) {
         bot.user.setPresence({ game: { name: value}})
