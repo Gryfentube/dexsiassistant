@@ -32,7 +32,6 @@ bot.login(process.env.TOKEN);
 //end
 var ladateplease = "Eh sale pute, il est quelle heure ?";
 //loG
-var lastactiv = member(gryf).displayName;
 var prefix = ("_"); //définir le prefix du bot
 var activ = ("créer un monde sans limite"); //modifier la valeur entre guillemets pour changer son état au démarage
 var values = ("empty"); //empecher les soucis de values
@@ -240,9 +239,6 @@ break;
         var ladate = message.createdAt;
         var date = ladate.getHours() + ":" + ladate.getMinutes();
         message.reply('Il est ' + date + ' mais je te pris de ne pas me traiter de pute');
-    }
-    if (message.content === prefix + "heure"){
-        message.reply('Mais je te pris de ne pas me traiter de pute')
     }
     if ((message.content === prefix + "everyone") && alladmin){
         bot.channels.get(annDXSIY).sendMessage('@everyone')
