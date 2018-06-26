@@ -32,7 +32,7 @@ bot.login(process.env.TOKEN);
 //end
 var ladateplease = "Eh sale pute, il est quelle heure ?";
 //loG
-
+var lastactiv = member(gryf).displayName;
 var prefix = ("_"); //définir le prefix du bot
 var activ = ("créer un monde sans limite"); //modifier la valeur entre guillemets pour changer son état au démarage
 var values = ("empty"); //empecher les soucis de values
@@ -167,6 +167,9 @@ break;
 break;            
         case "deco":
             bot.voiceChannel.leave();
+break;
+        case "messagemem":
+            message.channel.sendMessage(lastactiv);
 break;
         case "taco":
             message.channel.sendMessage("<:TACO11:449684235838554114> <:TACO12:449684236119572483> <:TACO13:449684236266504192> <:TACO14:449684236333744128>\n<:TACO21:449684236715294730> <:TACO22:449684236723814411> <:TACO23:449684237721796608> <:TACO24:449684236899713025>\n<:TACO31:449684237508018176> <:TACO32:449684237650493450> <:TACO33:449684237726253056> <:TACO34:449684237940031488>");
