@@ -124,6 +124,9 @@ bot.on('message', message => {
     
     
 break;
+        case "bois":
+            message.channel.send(atta)
+            break;
             case "play":
             if (message.channel.id === musicbot) {
                var value = message.content.substr(5);
