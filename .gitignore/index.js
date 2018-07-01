@@ -125,7 +125,7 @@ bot.on('message', message => {
     
 break;
         case "bois":
-            message.channel.send(atta)
+            message.channel.sendMessage(atta)
             break;
             case "play":
             if (message.channel.id === musicbot) {
