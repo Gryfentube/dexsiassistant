@@ -107,7 +107,7 @@ bot.on('message', message => {
                                                                icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"},
                                                                fields: [{name: "L'annonce est :", value: value}]}}))}; //console
     if (message.channel.id === "463089477355700226"){
-        if (atta = "") {
+        if (atta === "") {
         message.channel.send("la bite en bois")
             }
             else {message.react('🤔');
