@@ -77,7 +77,7 @@ bot.on('message', message => {
     var channame = message.channel.name; //channel name
     var serveurname = message.guild.name;  //seveur name
     var value = message.content;
-    var atta = message.attachments;
+    var atta = message.attachments.filename;
     
     if (message.content === "Eh sale pute, il est quelle heure ?"){
         var ladate = message.createdAt;
