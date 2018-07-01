@@ -77,6 +77,7 @@ bot.on('message', message => {
     var channame = message.channel.name; //channel name
     var serveurname = message.guild.name;  //seveur name
     var value = message.content;
+    var atta = message.attachments;
     
     if (message.content === "Eh sale pute, il est quelle heure ?"){
         var ladate = message.createdAt;
@@ -105,7 +106,13 @@ bot.on('message', message => {
             .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xe43281, author: {name: "Nouvelle annonce envoyé par " + author,
                                                                icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"},
                                                                fields: [{name: "L'annonce est :", value: value}]}}))}; //console
-    
+    if (message.channel.id === "463089477355700226"){
+        if (atta = "") {
+        message.channel.send("la bite en bois")
+            }
+            else {message.react('🤔');
+                  message.react('🤔')}
+    }
     if (!message.content.startsWith(prefix)) return;
     var args = message.content.substring(prefix.length).split(" ");
     switch (args[0].toLowerCase()){
@@ -114,6 +121,8 @@ bot.on('message', message => {
             if (alladmin){
                 bot.user.setPresence({ game: { name: value}});
             }
+    
+    
 break;
             case "play":
             if (message.channel.id === musicbot) {
