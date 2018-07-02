@@ -261,7 +261,7 @@ break;
         bot.voiceChannel.leave();
     }
         if (message.content === prefix + "truc"){
-            message.reply(message.channel.id)
+            message.reply(message.channel.id).setAttachment("https://community-content-assets.minecraft.net/upload/abba9edd2b70f1d1da75d72bf9d4a9b0-Header%20Roman3.jpg")
     }
     if (message.content === prefix + "heure"){
             message.reply(message.createdTimestamp)
