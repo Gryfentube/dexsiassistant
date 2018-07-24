@@ -228,10 +228,10 @@ break;
         if (message.content === prefix + "truc"){
             message.reply(message.channel.id).setAttachment("https://community-content-assets.minecraft.net/upload/abba9edd2b70f1d1da75d72bf9d4a9b0-Header%20Roman3.jpg")
     }
-    if (value.includes("carro")){
+    if (message.content.includes("carro")){
             message.reply("Oui c'est moi")
     }
-    if (messlow.includes("uimesami")) {
+    if (message.content.toLowerCase.includes("uimesami")) {
             message.reply("Alors ui")
     }
 
