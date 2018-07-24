@@ -46,19 +46,9 @@ function includesRealy(msg,str){
   )
 }
 
-bot.on('message',function(message){
-  if(
-    includesRealy(message,'Bonjour') ||
-    includesRealy(message,'Salut') ||
-    includesRealy(message,'Hey') ||
-    includesRealy(message,'Coucou') ||
-    includesRealy(message,'Bien') ||
-    includesRealy(message,'Yo') ||
-    includesRealy(message,'Hola')
-  ){
-    message.reply('bonjour !')
-  }
-}
+
+
+
 //endnew
 //event on démarrage
 bot.on('ready', () => {
@@ -253,5 +243,16 @@ break;
     if (mess === "carotte"){
             message.reply("Oui c'est moi")
     }
+    if(
+    includesRealy(message,'Bonjour') ||
+    includesRealy(message,'Salut') ||
+    includesRealy(message,'Hey') ||
+    includesRealy(message,'Coucou') ||
+    includesRealy(message,'Bien') ||
+    includesRealy(message,'Yo') ||
+    includesRealy(message,'Hola')
+  ){
+    message.reply('bonjour !')
+  }
 
 });
