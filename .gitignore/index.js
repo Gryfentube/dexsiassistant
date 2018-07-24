@@ -79,6 +79,7 @@ bot.on('message', message => {
     var channame = message.channel.name; //channel name
     var serveurname = message.guild.name;  //seveur name
     var value = message.content;
+    var messlow = value.toLowerCase();
     var atta = message.attachments.filename;
     
     if (message.content === "Eh sale pute, il est quelle heure ?"){
@@ -227,8 +228,11 @@ break;
         if (message.content === prefix + "truc"){
             message.reply(message.channel.id).setAttachment("https://community-content-assets.minecraft.net/upload/abba9edd2b70f1d1da75d72bf9d4a9b0-Header%20Roman3.jpg")
     }
-    if (message.content.includes.toLowerCase("carro")){
+    if (value.includes("carro")){
             message.reply("Oui c'est moi")
+    }
+    if (messlow.includes("uimesami")) {
+            message.reply("Alors ui")
     }
 
 
