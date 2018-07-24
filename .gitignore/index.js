@@ -36,6 +36,30 @@ var prefix = ("_"); //définir le prefix du bot
 var activ = ("créer un monde sans limite"); //modifier la valeur entre guillemets pour changer son état au démarage
 var values = ("empty"); //empecher les soucis de values
 
+
+//startnew
+function includesRealy(msg,str){
+  return(
+    msg.content.includes(str) ||
+    msg.content.includes(str.toUpperCase()) ||
+    msg.content.includes(str.toLowerCase())
+  )
+}
+
+bot.on('message',function(message){
+  if(
+    includesRealy(message,'Bonjour') ||
+    includesRealy(message,'Salut') ||
+    includesRealy(message,'Hey') ||
+    includesRealy(message,'Coucou') ||
+    includesRealy(message,'Bien') ||
+    includesRealy(message,'Yo') ||
+    includesRealy(message,'Hola')
+  ){
+    message.reply('bonjour !')
+  }
+}
+//endnew
 //event on démarrage
 bot.on('ready', () => {
     bot.user.setPresence({ game: { name: activ}});
