@@ -37,19 +37,6 @@ var activ = ("créer un monde sans limite"); //modifier la valeur entre guilleme
 var values = ("empty"); //empecher les soucis de values
 
 
-//startnew
-function includesRealy(msg,str){
-  return(
-    msg.content.includes(str) ||
-    msg.content.includes(str.toUpperCase()) ||
-    msg.content.includes(str.toLowerCase())
-  )
-}
-
-
-
-
-//endnew
 //event on démarrage
 bot.on('ready', () => {
     bot.user.setPresence({ game: { name: activ}});
@@ -240,19 +227,9 @@ break;
         if (message.content === prefix + "truc"){
             message.reply(message.channel.id).setAttachment("https://community-content-assets.minecraft.net/upload/abba9edd2b70f1d1da75d72bf9d4a9b0-Header%20Roman3.jpg")
     }
-    if (message.content === "carotte"){
+    if (message.content = "carotte"){
             message.reply("Oui c'est moi")
     }
-    if(
-    includesRealy(message,'bonjour') ||
-    includesRealy(message,'salut') ||
-    includesRealy(message,'hey') ||
-    includesRealy(message,'coucou') ||
-    includesRealy(message,'bien') ||
-    includesRealy(message,'yo') ||
-    includesRealy(message,'hola')
-  ){
-    message.reply('bonjour !')
-  }
+
 
 });
