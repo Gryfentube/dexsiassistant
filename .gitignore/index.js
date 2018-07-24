@@ -244,13 +244,13 @@ break;
             message.reply("Oui c'est moi")
     }
     if(
-    includesRealy(message,'Bonjour') ||
-    includesRealy(message,'Salut') ||
-    includesRealy(message,'Hey') ||
-    includesRealy(message,'Coucou') ||
-    includesRealy(message,'Bien') ||
-    includesRealy(message,'Yo') ||
-    includesRealy(message,'Hola')
+    includesRealy(message,'bonjour') ||
+    includesRealy(message,'salut') ||
+    includesRealy(message,'hey') ||
+    includesRealy(message,'coucou') ||
+    includesRealy(message,'bien') ||
+    includesRealy(message,'yo') ||
+    includesRealy(message,'hola')
   ){
     message.reply('bonjour !')
   }
