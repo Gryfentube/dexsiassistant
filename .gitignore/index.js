@@ -66,6 +66,7 @@ bot.on("guildMemberRemove", member => { //Quand un membre quitte dans le serveur
 
  //event on message
 bot.on('message', message => {
+    var mess = message.content.str.toLowerCase();
     var authorDN = message.member.displayName; //nom de l'auteur du message
     var author = message.member.displayName; //username de l'auteur
     var TAGauthor = message.member.user.tag; //tag de l'auteur
@@ -225,8 +226,8 @@ break;
         if (message.content === prefix + "truc"){
             message.reply(message.channel.id).setAttachment("https://community-content-assets.minecraft.net/upload/abba9edd2b70f1d1da75d72bf9d4a9b0-Header%20Roman3.jpg")
     }
-    if (message.content === prefix + "heure"){
-            message.reply(message.createdTimestamp)
+    if (mess === "carotte"){
+            message.reply("Oui c'est moi")
     }
 
 });
