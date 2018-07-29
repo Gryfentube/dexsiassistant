@@ -234,7 +234,7 @@ break;
     if (message.content.includes("carro")){
             message.reply("Oui c'est moi")
     }
-    if (message.content.toLowerCase.includes("uimesami")) {
+    if (message.content.includes.toLowerCase("uimesami")) {
             message.reply("Alors ui")
     }
 
