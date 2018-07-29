@@ -81,7 +81,7 @@ bot.on('message', message => {
     var value = message.content;
     var messlow = value.toLowerCase();
     var incl = value.includes;
-    var incllow = incllow.toLowerCase();
+    var incllow = incl.toLowerCase();
     var atta = message.attachments.filename;
     
     if (message.content === "Eh sale pute, il est quelle heure ?"){
