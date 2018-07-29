@@ -93,7 +93,7 @@ bot.on('message', message => {
         var date = heure + ":" + minute;
         message.reply('il est ' + date + ' mais je te pris de ne pas me traiter de pute');
     }
-    if (message.content.includes.toLowerCase("uimesami")) {
+    if (message.content.includes.toLowerCase() === "pasu") {
             message.reply("Alors ui")
     }
     if (message.channel.id === activitDXSIY) {
