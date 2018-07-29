@@ -80,8 +80,7 @@ bot.on('message', message => {
     var serveurname = message.guild.name;  //seveur name
     var value = message.content;
     var messlow = value.toLowerCase();
-    var incl = value.includes;
-    var incllow = incl.toLowerCase();
+    var incllow = messlow.includes;
     var atta = message.attachments.filename;
     
     if (message.content === "Eh sale pute, il est quelle heure ?"){
