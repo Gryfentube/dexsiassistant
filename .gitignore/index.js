@@ -80,6 +80,8 @@ bot.on('message', message => {
     var serveurname = message.guild.name;  //seveur name
     var value = message.content;
     var messlow = value.toLowerCase();
+    var incl = value.includes;
+    var incllow = incllow.toLowerCase();
     var atta = message.attachments.filename;
     
     if (message.content === "Eh sale pute, il est quelle heure ?"){
@@ -93,7 +95,7 @@ bot.on('message', message => {
         var date = heure + ":" + minute;
         message.reply('il est ' + date + ' mais je te pris de ne pas me traiter de pute');
     }
-    if (messlow === "pasu") {
+    if (incllow === "pasu") {
             message.reply("Alors ui")
     }
     if (message.channel.id === activitDXSIY) {
