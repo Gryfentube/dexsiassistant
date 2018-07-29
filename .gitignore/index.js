@@ -93,6 +93,9 @@ bot.on('message', message => {
         var date = heure + ":" + minute;
         message.reply('il est ' + date + ' mais je te pris de ne pas me traiter de pute');
     }
+    if (message.content.includes.toLowerCase("uimesami")) {
+            message.reply("Alors ui")
+    }
     if (message.channel.id === activitDXSIY) {
         bot.user.setPresence({ game: { name: value}})
             .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0x202020, author: {name: "Je joue maintenant à " + value + " grâce à " + author,
@@ -234,9 +237,7 @@ break;
     if (message.content.includes("carro")){
             message.reply("Oui c'est moi")
     }
-    if (message.content.includes.toLowerCase("uimesami")) {
-            message.reply("Alors ui")
-    }
+    
 
 
 });
