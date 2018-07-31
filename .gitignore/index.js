@@ -12,64 +12,7 @@ const db = low(adapter);
 bot.login(process.env.TOKEN);
 
 //emoj
-
-
-//salons DexSia Introduce YourSelf
-    const annDXSIY = "452800422655033365"; //salon annonce DexSia Introduce Yourself
-    const musicbot = "452833658659930117"; //salon music bot
-//Portal DexSia Introduce Yourself
-    const annPoDXSIYemb = "455740492999688192"; //salon annonce de Portal Dxs IY
-    const annPoDXSIY = "456188249669632000";
-    const activitDXSIY = "455798472076034051"; //salon activité du bot DexSia Assistant
-    const consauleDXSIY = "455740278272425995"; //salon console de Portal Dxs IY
-//salons DexSia
-    const annDXS = "454994767877636098"; //salon annonce DexSia
-//Portal DexSia
-    const annPoDXS = "455740525807665172"; //salon annonce de Portal DexSia
-    const activitDXS = "455836828214231082"; //salon activité du bot DexSia
-    const consauleDXS = "455740246110240778"; //salon console de Portal DexSia
-//Admin
-    const jack = "239310906981482496"; //Définir Jack avec son id
-    const gryf = "187554016853622784"; //Définir Gryf avec son id
-    const alladmin = "(message.member.id === jack) || (message.member.id === gryf)"; //Jack ou Gryf (dans un if généralement)
-//end
-var ladateplease = "Eh sale pute, il est quelle heure ?";
-//loG
-var prefix = ("_"); //définir le prefix du bot
-var activ = ("créer un monde sans limite"); //modifier la valeur entre guillemets pour changer son état au démarage
-var values = ("empty"); //empecher les soucis de values
-
-
-//event on démarrage
-bot.on('ready', () => {
-    bot.user.setPresence({ game: { name: activ}});
-    var annonce = db.get(`ann`).map('annonce').value();
-    console.log("Le bot est prêt");
-    bot.channels.get(consauleDXSIY).send({"embed": {"description": "Je viens de me réveiller ${sleeping}",
-    "url": "https://discordapp.com","color": 0xff00ff,
-    "footer": {"icon_url": "https://image.flaticon.com/icons/png/128/263/263147.png",
-      "text": "Je joue à " + activ},
-    "thumbnail": {"url": "https://cdn.discordapp.com/icons/452444449608302602/13a579dd19b7b36b39bd1aa6f0b2751a.png"},
-    "image": {"url": "https://fsmedia.imgix.net/05/a9/aa/5c/261b/4afa/a99c/ac32c5c1b81e/vault-boy.png?rect=0%2C120%2C1116%2C558&auto=format%2Ccompress&w=650"},
-    "author": {"name": "Je suis en ligne :D",
-      "url": "",
-      "icon_url": ""}}})
-});
-
-bot.on("guildMemberAdd", member => { //Quand un membre entre dans le serveur
-    bot.channels.get('452796717738491904').sendMessage('Hey' + member.user + ', Bienvenue sur le serveur **Dexsia | Introduce Yourself** ${happy1} !\nPour rejoindre le groupe fais !member dans <#452973331042402304> et envoie nous ta candidature.\nBienvenue et passe un bon moment dans la DexSia <:051angel:458741109925871676>')//envoie le message de bienvenue
-        .then(bot.channels.get(consauleDXSIY).sendMessage(member.user + " est arrivé dans la DexSia, le message s'est bien affiché"));  //console
-});
-
-bot.on("guildMemberRemove", member => { //Quand un membre quitte dans le serveur
-    var aurevoirDXSIY = member.guild.channels.find("name", "left"); //variable pour le salon aurevoir
-    bot.channels.get('452815373700694017').sendMessage('**' + member.displayName + '** nous a quitté, paix à son âme... <:051cry:458741122169044994>')//envoie le message de aurevoir
-        .then(bot.channels.get(consauleDXSIY).sendMessage(member.user + " a quitté la DexSia | Introduce Yourself, le message s'est bien affiché"));  //console
-});
-
- //event on message
-bot.on('message', message => {
-    var angel = bot.emojis.find("name", "051angel");
+var angel = bot.emojis.find("name", "051angel");
 var angry = bot.emojis.find("name", "051angry");
 var astonished = bot.emojis.find("name", "051astonished");
 var astonished1 = bot.emojis.find("name", "051astonished1");
@@ -119,6 +62,63 @@ var vomiting = bot.emojis.find("name", "051vomiting");
 var vomiting1 = bot.emojis.find("name", "051vomiting1");
 var wink = bot.emojis.find("name", "051wink");
 var zombie = bot.emojis.find("name", "051zombie");
+
+//salons DexSia Introduce YourSelf
+    const annDXSIY = "452800422655033365"; //salon annonce DexSia Introduce Yourself
+    const musicbot = "452833658659930117"; //salon music bot
+//Portal DexSia Introduce Yourself
+    const annPoDXSIYemb = "455740492999688192"; //salon annonce de Portal Dxs IY
+    const annPoDXSIY = "456188249669632000";
+    const activitDXSIY = "455798472076034051"; //salon activité du bot DexSia Assistant
+    const consauleDXSIY = "455740278272425995"; //salon console de Portal Dxs IY
+//salons DexSia
+    const annDXS = "454994767877636098"; //salon annonce DexSia
+//Portal DexSia
+    const annPoDXS = "455740525807665172"; //salon annonce de Portal DexSia
+    const activitDXS = "455836828214231082"; //salon activité du bot DexSia
+    const consauleDXS = "455740246110240778"; //salon console de Portal DexSia
+//Admin
+    const jack = "239310906981482496"; //Définir Jack avec son id
+    const gryf = "187554016853622784"; //Définir Gryf avec son id
+    const alladmin = "(message.member.id === jack) || (message.member.id === gryf)"; //Jack ou Gryf (dans un if généralement)
+//end
+var ladateplease = "Eh sale pute, il est quelle heure ?";
+//loG
+var prefix = ("_"); //définir le prefix du bot
+var activ = ("créer un monde sans limite"); //modifier la valeur entre guillemets pour changer son état au démarage
+var values = ("empty"); //empecher les soucis de values
+
+
+//event on démarrage
+bot.on('ready', () => {
+    bot.user.setPresence({ game: { name: activ}});
+    var annonce = db.get(`ann`).map('annonce').value();
+    console.log("Le bot est prêt");
+    bot.channels.get(consauleDXSIY).send({"embed": {"description": "Je viens de me réveiller ${sleeping}" + sleeping,
+    "url": "https://discordapp.com","color": 0xff00ff,
+    "footer": {"icon_url": "https://image.flaticon.com/icons/png/128/263/263147.png",
+      "text": "Je joue à " + activ},
+    "thumbnail": {"url": "https://cdn.discordapp.com/icons/452444449608302602/13a579dd19b7b36b39bd1aa6f0b2751a.png"},
+    "image": {"url": "https://fsmedia.imgix.net/05/a9/aa/5c/261b/4afa/a99c/ac32c5c1b81e/vault-boy.png?rect=0%2C120%2C1116%2C558&auto=format%2Ccompress&w=650"},
+    "author": {"name": "Je suis en ligne :D",
+      "url": "",
+      "icon_url": ""}}})
+});
+
+bot.on("guildMemberAdd", member => { //Quand un membre entre dans le serveur
+    bot.channels.get('452796717738491904').sendMessage('Hey' + member.user + ', Bienvenue sur le serveur **Dexsia | Introduce Yourself** ${happy1} !\nPour rejoindre le groupe fais !member dans <#452973331042402304> et envoie nous ta candidature.\nBienvenue et passe un bon moment dans la DexSia <:051angel:458741109925871676>')//envoie le message de bienvenue
+        .then(bot.channels.get(consauleDXSIY).sendMessage(member.user + " est arrivé dans la DexSia, le message s'est bien affiché"));  //console
+});
+
+bot.on("guildMemberRemove", member => { //Quand un membre quitte dans le serveur
+    var aurevoirDXSIY = member.guild.channels.find("name", "left"); //variable pour le salon aurevoir
+    bot.channels.get('452815373700694017').sendMessage('**' + member.displayName + '** nous a quitté, paix à son âme... <:051cry:458741122169044994>')//envoie le message de aurevoir
+        .then(bot.channels.get(consauleDXSIY).sendMessage(member.user + " a quitté la DexSia | Introduce Yourself, le message s'est bien affiché"));  //console
+});
+
+ //event on message
+bot.on('message', message => {
+    
     var authorDN = message.member.displayName; //nom de l'auteur du message
     var author = message.member.displayName; //username de l'auteur
     var TAGauthor = message.member.user.tag; //tag de l'auteur
