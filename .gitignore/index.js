@@ -11,6 +11,58 @@ const db = low(adapter);
         .write()
 bot.login(process.env.TOKEN);
 
+//emoj
+var angel = 051;
+var angry = 051;
+var astonished = 051;
+var astonished1 = 051;
+var confused = 051;
+var cool = 051;
+var cool1 = 051;
+var cry = 051;
+var cry1 = 051;
+var devil = 051;
+var dizzy = 051;
+var expressionless = 051;
+var flushed = 051;
+var happy = 051;
+var happy1 = 051;
+var happy2 = 051;
+var injury = 051;
+var inlove = 051;
+var joy = 051;
+var kiss = 051;
+var kiss1 = 051;
+var kiss2 = 051;
+var mask = 051;
+var mute = 051;
+var neutral = 051;
+var sad = 051;
+var sad1 = 051;
+var scared = 051;
+var scared1 = 051;
+var secret = 051;
+var shocked = 051;
+var sick = 051;
+var sleeping = 051;
+var smile = 051;
+var smile1 = 051;
+var smiling = 051;
+var smiling1 = 051;
+var smirking = 051;
+var surpised = 051;
+var sweat = 051;
+var thinking = 051;
+var tired = 051;
+var tongue = 051;
+var tongue1 = 051;
+var tongue2 = 051;
+var unamused = 051;
+var vomiting = 051;
+var vomiting1 = 051;
+var wink = 051;
+var zombie = 051;
+
 //salons DexSia Introduce YourSelf
     const annDXSIY = "452800422655033365"; //salon annonce DexSia Introduce Yourself
     const musicbot = "452833658659930117"; //salon music bot
@@ -42,7 +94,7 @@ bot.on('ready', () => {
     bot.user.setPresence({ game: { name: activ}});
     var annonce = db.get(`ann`).map('annonce').value();
     console.log("Le bot est prêt");
-    bot.channels.get(consauleDXSIY).send({"embed": {"description": "Je viens de me réveiller <:051sleeping:458741159062405141>",
+    bot.channels.get(consauleDXSIY).send({"embed": {"description": "Je viens de me réveiller ${sleeping}",
     "url": "https://discordapp.com","color": 0xff00ff,
     "footer": {"icon_url": "https://image.flaticon.com/icons/png/128/263/263147.png",
       "text": "Je joue à " + activ},
@@ -54,9 +106,8 @@ bot.on('ready', () => {
 });
 
 bot.on("guildMemberAdd", member => { //Quand un membre entre dans le serveur
-    bot.channels.get('452796717738491904').sendMessage('Hey' + member.user + ', Bienvenue sur le serveur **Dexsia | Introduce Yourself** <:051happy1:458741130708779028><:051happy2:458741131627331605> !\nPour rejoindre le groupe fais !member dans <#452973331042402304> et envoie nous ta candidature.\nBienvenue et passe un bon moment dans la DexSia <:051angel:458741109925871676>')//envoie le message de bienvenue
+    bot.channels.get('452796717738491904').sendMessage('Hey' + member.user + ', Bienvenue sur le serveur **Dexsia | Introduce Yourself** ${happy1} !\nPour rejoindre le groupe fais !member dans <#452973331042402304> et envoie nous ta candidature.\nBienvenue et passe un bon moment dans la DexSia <:051angel:458741109925871676>')//envoie le message de bienvenue
         .then(bot.channels.get(consauleDXSIY).sendMessage(member.user + " est arrivé dans la DexSia, le message s'est bien affiché"));  //console
-
 });
 
 bot.on("guildMemberRemove", member => { //Quand un membre quitte dans le serveur
