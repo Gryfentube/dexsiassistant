@@ -42,7 +42,7 @@ bot.on('ready', () => {
     bot.user.setPresence({ game: { name: activ}});
     var annonce = db.get(`ann`).map('annonce').value();
     console.log("Le bot est prêt");
-    bot.channels.get(consauleDXSIY).send({"embed": {"description": "Je viens de me réveiller ${sleeping}" + sleeping,
+    bot.channels.get(consauleDXSIY).send({"embed": {"description": "Je viens de me réveiller ${sleeping}",
     "url": "https://discordapp.com","color": 0xff00ff,
     "footer": {"icon_url": "https://image.flaticon.com/icons/png/128/263/263147.png",
       "text": "Je joue à " + activ},
