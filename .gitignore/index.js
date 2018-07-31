@@ -12,6 +12,7 @@ const db = low(adapter);
 bot.login(process.env.TOKEN);
 
 //emoj
+function emoj(angel, angry, astonished, astonished1, confused, cool, cool1, cry, cry1, devil, dizzy, expressionless, flushed, happy, happy1, happy2, injury, inlove, joy, kiss, kiss1, kiss2, mask, mute, neutral, sad, sad1, scared, scared1, secret, shocked, sick, sleeping, smile, smile1, smiling, smiling1, smirking, surpised, sweat, thinking, tired, tongue, tongue1, tongue2, unamused, vomiting, vomiting1, wink, zombie) {
 var angel = bot.emojis.find("name", "051angel");
 var angry = bot.emojis.find("name", "051angry");
 var astonished = bot.emojis.find("name", "051astonished");
@@ -61,7 +62,7 @@ var unamused = bot.emojis.find("name", "051unamused");
 var vomiting = bot.emojis.find("name", "051vomiting");
 var vomiting1 = bot.emojis.find("name", "051vomiting1");
 var wink = bot.emojis.find("name", "051wink");
-var zombie = bot.emojis.find("name", "051zombie");
+var zombie = bot.emojis.find("name", "051zombie");}
 
 //salons DexSia Introduce YourSelf
     const annDXSIY = "452800422655033365"; //salon annonce DexSia Introduce Yourself
@@ -91,6 +92,7 @@ var values = ("empty"); //empecher les soucis de values
 
 //event on démarrage
 bot.on('ready', () => {
+    emoj();
     bot.user.setPresence({ game: { name: activ}});
     var annonce = db.get(`ann`).map('annonce').value();
     console.log("Le bot est prêt");
