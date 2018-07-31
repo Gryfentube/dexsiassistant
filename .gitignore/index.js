@@ -100,8 +100,10 @@ bot.on('message', message => {
             .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0x202020, author: {name: "Je joue maintenant à " + value + " grâce à " + author,
                                                                icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"}}}))};
     if (message.content === "listemojis") {
-  const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
+  const emojiList = message.guild.emojis.map(e=>e.toString()).join("/n");
+  const emojiList = message.guild.emojis.map(e=>e.toString()).join("/n");
   message.channel.sendMessage(emojiList);
+  message.channel.sendMessage("`" + emojiList + "`");
     }
     if (message.channel.id === annPoDXSIY){
         bot.channels.get(annDXSIY).sendMessage(value) //annonce
