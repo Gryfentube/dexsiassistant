@@ -11,59 +11,6 @@ const db = low(adapter);
         .write()
 bot.login(process.env.TOKEN);
 
-//emoj
-function emoj(angel, angry, astonished, astonished1, confused, cool, cool1, cry, cry1, devil, dizzy, expressionless, flushed, happy, happy1, happy2, injury, inlove, joy, kiss, kiss1, kiss2, mask, mute, neutral, sad, sad1, scared, scared1, secret, shocked, sick, sleeping, smile, smile1, smiling, smiling1, smirking, surpised, sweat, thinking, tired, tongue, tongue1, tongue2, unamused, vomiting, vomiting1, wink, zombie) {
-var angel = bot.emojis.find("name", "051angel");
-var angry = bot.emojis.find("name", "051angry");
-var astonished = bot.emojis.find("name", "051astonished");
-var astonished1 = bot.emojis.find("name", "051astonished1");
-var confused = bot.emojis.find("name", "051confused");
-var cool = bot.emojis.find("name", "051cool");
-var cool1 = bot.emojis.find("name", "051cool1");
-var cry = bot.emojis.find("name", "051cry");
-var cry1 = bot.emojis.find("name", "051cry1");
-var devil = bot.emojis.find("name", "051devil");
-var dizzy = bot.emojis.find("name", "051dizzy");
-var expressionless = bot.emojis.find("name", "051expressionless");
-var flushed = bot.emojis.find("name", "051flushed");
-var happy = bot.emojis.find("name", "051happy");
-var happy1 = bot.emojis.find("name", "051happy1");
-var happy2 = bot.emojis.find("name", "051happy2");
-var injury = bot.emojis.find("name", "051injury");
-var inlove = bot.emojis.find("name", "051inlove");
-var joy = bot.emojis.find("name", "051joy");
-var kiss = bot.emojis.find("name", "051kiss");
-var kiss1 = bot.emojis.find("name", "051kiss1");
-var kiss2 = bot.emojis.find("name", "051kiss2");
-var mask = bot.emojis.find("name", "051mask");
-var mute = bot.emojis.find("name", "051mute");
-var neutral = bot.emojis.find("name", "051neutral");
-var sad = bot.emojis.find("name", "051sad");
-var sad1 = bot.emojis.find("name", "051sad1");
-var scared = bot.emojis.find("name", "051scared");
-var scared1 = bot.emojis.find("name", "051scared1");
-var secret = bot.emojis.find("name", "051secret");
-var shocked = bot.emojis.find("name", "051shocked");
-var sick = bot.emojis.find("name", "051sick");
-var sleeping = bot.emojis.find("name", "051sleeping");
-var smile = bot.emojis.find("name", "051smile");
-var smile1 = bot.emojis.find("name", "051smile1");
-var smiling = bot.emojis.find("name", "051smiling");
-var smiling1 = bot.emojis.find("name", "051smiling1");
-var smirking = bot.emojis.find("name", "051smirking");
-var surpised = bot.emojis.find("name", "051surpised");
-var sweat = bot.emojis.find("name", "051sweat");
-var thinking = bot.emojis.find("name", "051thinking");
-var tired = bot.emojis.find("name", "051tired");
-var tongue = bot.emojis.find("name", "051tongue");
-var tongue1 = bot.emojis.find("name", "051tongue1");
-var tongue2 = bot.emojis.find("name", "051tongue2");
-var unamused = bot.emojis.find("name", "051unamused");
-var vomiting = bot.emojis.find("name", "051vomiting");
-var vomiting1 = bot.emojis.find("name", "051vomiting1");
-var wink = bot.emojis.find("name", "051wink");
-var zombie = bot.emojis.find("name", "051zombie");}
-
 //salons DexSia Introduce YourSelf
     const annDXSIY = "452800422655033365"; //salon annonce DexSia Introduce Yourself
     const musicbot = "452833658659930117"; //salon music bot
@@ -92,7 +39,6 @@ var values = ("empty"); //empecher les soucis de values
 
 //event on démarrage
 bot.on('ready', () => {
-    emoj();
     bot.user.setPresence({ game: { name: activ}});
     var annonce = db.get(`ann`).map('annonce').value();
     console.log("Le bot est prêt");
@@ -153,7 +99,10 @@ bot.on('message', message => {
         bot.user.setPresence({ game: { name: value}})
             .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0x202020, author: {name: "Je joue maintenant à " + value + " grâce à " + author,
                                                                icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"}}}))};
-
+    if (message.content === "listemojis") {
+  const emojiList = message.guild.emojis.map(e=>e.toString()).join(" ");
+  message.channel.sendMessage(emojiList);
+    }
     if (message.channel.id === annPoDXSIY){
         bot.channels.get(annDXSIY).sendMessage(value) //annonce
             .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0xe43281, author: {name: "Nouvelle annonce envoyé par " + author,
