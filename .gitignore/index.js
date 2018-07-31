@@ -100,9 +100,7 @@ bot.on('message', message => {
             .then(bot.channels.get(consauleDXSIY).sendMessage({embed: {color: 0x202020, author: {name: "Je joue maintenant à " + value + " grâce à " + author,
                                                                icon_url: "https://cdn.discordapp.com/icons/441664261454823444/1cced0ad87913d0d5232dce11bedb70f.png"}}}))};
     if (message.content === "listemojis") {
-  const emojiList = message.guild.emojis.map(e=>e.toString()).join("/n");
-  message.channel.sendMessage(emojiList);
-  message.channel.sendMessage("`" + emojiList + "`");
+  message.channel.sendMessage(":051angel: `:051angel:`\n:051angry: `:051angry:`\n:051astonished: `:051astonished:`\n:051astonished1: `:051astonished1:`\n:051confused: `:051confused:`\n:051cool: `:051cool:`\n:051cool1: `:051cool1:`\n:051cry: `:051cry:`\n:051cry1: `:051cry1:`\n:051devil: `:051devil:`\n:051dizzy: `:051dizzy:`\n:051expressionless: `:051expressionless:`\n:051flushed: `:051flushed:`\n:051happy: `:051happy:`\n:051happy1: `:051happy1:`\n:051happy2: `:051happy2:`\n:051injury: `:051injury:`\n:051inlove: `:051inlove:`\n:051joy: `:051joy:`\n:051kiss: `:051kiss:`\n:051kiss1: `:051kiss1:`\n:051kiss2: `:051kiss2:`\n:051mask: `:051mask:`\n:051mute: `:051mute:`\n:051neutral: `:051neutral:`\n:051sad: `:051sad:`\n:051sad1: `:051sad1:`\n:051scared: `:051scared:`\n:051scared1: `:051scared1:`\n:051secret: `:051secret:`\n:051shocked: `:051shocked:`\n:051sick: `:051sick:`\n:051sleeping: `:051sleeping:`\n:051smile: `:051smile:`\n:051smile1: `:051smile1:`\n:051smiling: `:051smiling:`\n:051smiling1: `:051smiling1:`\n:051smirking: `:051smirking:`\n:051surpised: `:051surpised:`\n:051sweat: `:051sweat:`\n:051thinking: `:051thinking:`\n:051tired: `:051tired:`\n:051tongue: `:051tongue:`\n:051tongue1: `:051tongue1:`\n:051tongue2: `:051tongue2:`\n:051unamused: `:051unamused:`\n:051vomiting: `:051vomiting:`\n:051vomiting1: `:051vomiting1:`\n:051wink: `:051wink:`\n:051zombie: `:051zombie:`\n");
     }
     if (message.channel.id === annPoDXSIY){
         bot.channels.get(annDXSIY).sendMessage(value) //annonce
