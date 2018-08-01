@@ -42,8 +42,8 @@ bot.on('ready', () => {
     bot.user.setPresence({ game: { name: activ}});
     var annonce = db.get(`ann`).map('annonce').value();
     console.log("Le bot est prêt");
-    bot.channels.get(consauleDXSIY).send({"embed": {"description": "Je viens de me réveiller <:051sleeping:473830229513601024>}",
-    "url": "https://discordapp.com","color": 0xff00ff,
+    bot.channels.get(consauleDXSIY).send({"embed": {"description": "Je viens de me réveiller <:051sleeping:473830229513601024>",
+    "url": "https://discordapp.com","color": 16777215,
     "footer": {"icon_url": "https://image.flaticon.com/icons/png/128/263/263147.png",
       "text": "Je joue à " + activ},
     "thumbnail": {"url": "https://cdn.discordapp.com/icons/452444449608302602/13a579dd19b7b36b39bd1aa6f0b2751a.png"},
@@ -60,7 +60,7 @@ bot.on("guildMemberAdd", member => { //Quand un membre entre dans le serveur
 
 bot.on("guildMemberRemove", member => { //Quand un membre quitte dans le serveur
     var aurevoirDXSIY = member.guild.channels.find("name", "left"); //variable pour le salon aurevoir
-    bot.channels.get('452815373700694017').sendMessage('**' + member.displayName + '** nous a quitté, paix à son âme... <:051cry:458741122169044994>')//envoie le message de aurevoir
+    bot.channels.get('452815373700694017').sendMessage('**' + member.displayName + '** nous a quitté, paix à son âme... <:051cry:473830225801641987>')//envoie le message de aurevoir
         .then(bot.channels.get(consauleDXSIY).sendMessage(member.user + " a quitté la DexSia | Introduce Yourself, le message s'est bien affiché"));  //console
 });
 
