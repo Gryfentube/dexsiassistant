@@ -46,7 +46,7 @@ bot.on('ready', () => {
     "url": "https://discordapp.com","color": 16777215,
     "footer": {"icon_url": "https://image.flaticon.com/icons/png/128/263/263147.png",
       "text": "Je joue à " + activ},
-    "thumbnail": {"url": "https://cdn.discordapp.com/icons/452444449608302602/13a579dd19b7b36b39bd1aa6f0b2751a.png"},
+    "thumbnail": {"url": "https://cdn.discordapp.com/attachments/455740278272425995/474053163834409002/Cete.png"},
     "image": {"url": "https://fsmedia.imgix.net/05/a9/aa/5c/261b/4afa/a99c/ac32c5c1b81e/vault-boy.png?rect=0%2C120%2C1116%2C558&auto=format%2Ccompress&w=650"},
     "author": {"name": "Je suis en ligne :D",
       "url": "",
