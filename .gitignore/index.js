@@ -54,7 +54,7 @@ bot.on('ready', () => {
 });
 
 bot.on("guildMemberAdd", member => { //Quand un membre entre dans le serveur
-    bot.channels.get('452796717738491904').sendMessage('Hey' + member.user + ', Bienvenue sur le serveur **Dexsia | Introduce Yourself** ${happy1} !\nPour rejoindre le groupe fais !member dans <#452973331042402304> et envoie nous ta candidature.\nBienvenue et passe un bon moment dans la DexSia <:051angel:458741109925871676>')//envoie le message de bienvenue
+    bot.channels.get('452796717738491904').sendMessage('Hey' + member.user + ', Bienvenue sur le serveur **Dexsia | Introduce Yourself** <:051happy1:473830225709629472> <:051happy2:473830226284118027> !\nPour rejoindre le groupe fais !member dans <#452973331042402304> et envoie nous ta candidature.\nBienvenue et passe un bon moment dans la DexSia <:051angel:473830204083798016>')//envoie le message de bienvenue
         .then(bot.channels.get(consauleDXSIY).sendMessage(member.user + " est arrivé dans la DexSia, le message s'est bien affiché"));  //console
 });
 
