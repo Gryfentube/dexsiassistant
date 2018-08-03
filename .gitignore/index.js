@@ -10,7 +10,7 @@ const db = low(adapter);
     db.defaults({ ann:[]})
         .write()
 bot.login(process.env.TOKEN);
-const fs = require('fs');
+
 const emoji = require("./emoji.json");
 
 //salons DexSia Introduce YourSelf
