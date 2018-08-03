@@ -41,7 +41,7 @@ var values = ("empty"); //empecher les soucis de values
 
 //event on démarrage
 bot.on('ready', () => {
-    bot.user.setAvatar('https://cdn.discordapp.com/attachments/360840605363863554/474966338016903168/cosmocats6.jpg');
+
     bot.user.setPresence({ game: { name: activ}});
     var annonce = db.get(`ann`).map('annonce').value();
     console.log("Le bot est prêt");
