@@ -12,7 +12,7 @@ const db = low(adapter);
 bot.login(process.env.TOKEN);
 
 const emoji = require("./emoji.json");
-const emojis = require("./emojis.js");
+const emojis = require("./eb.js");
 
 //salons DexSia Introduce YourSelf
     const annDXSIY = "452800422655033365"; //salon annonce DexSia Introduce Yourself
@@ -69,7 +69,8 @@ bot.on("guildMemberRemove", member => { //Quand un membre quitte dans le serveur
 
  //event on message
 bot.on('message', message => {
-    
+    let args = msg.content.split(" ");
+    const cmd = args[0];
     var authorDN = message.member.displayName; //nom de l'auteur du message
     var author = message.member.displayName; //username de l'auteur
     var TAGauthor = message.member.user.tag; //tag de l'auteur
@@ -110,7 +111,7 @@ bot.on('message', message => {
      message.channel.sendMessage("Ce serveur consiste à promouvoir tous les talents. Pour pouvoir Exposer vos talent, vous devez avoir un des rôles de créateur de contenu, et pour en avoir un, vous devez nous fournir des informations primaires sur vous :\n◾ Nom\n◾ Age\n◾ Présentation global\n\nLes types de création que vous pouvez exposer sont définis par ces rôles :\n◾Drawings/Gfx (logo, bannière, dessins, peintures...)\n◾Streamer\n◾Youtuber/Montage : 	\n- Gaming\n- Animation \n- Danse\n- Lifestyle\n- Beauté\n- Humour\n- Fiction\n- Vulgarisation scientifique\n- Sport\n◾Music/Beatmaking (avec ou sans chant)\n\nMontrez-nous vos travaux et projets avec : \n◾ Réseaux sociaux ➡️ (Dessinateurs)\n◾ Soundcloud ➡️ (Music/beatmaking)\n◾ Chaîne Twitch ou Youtube ➡️ (Streamer/ Yt)\n\nVotre candidature sera supprimée suite à l’acceptation ou le refus\n(Réponse sous les plus brefs délais )\n\nBonne journée à toi <:051happy1:473830225709629472>")   
     }
     if (message.content === "ouiounontuchoisis") {
-        message.channel.sendMessage(EBangry)
+        message.channel.sendMessage(eb.angry)
     }
     if (message.channel.id === annPoDXSIY){
         bot.channels.get(annDXSIY).sendMessage(value) //annonce
