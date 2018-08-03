@@ -69,7 +69,7 @@ bot.on("guildMemberRemove", member => { //Quand un membre quitte dans le serveur
 
  //event on message
 bot.on('message', message => {
-    let args = msg.content.split(" ");
+    let args = message.content.split(" ");
     const cmd = args[0];
     var authorDN = message.member.displayName; //nom de l'auteur du message
     var author = message.member.displayName; //username de l'auteur
