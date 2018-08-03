@@ -12,6 +12,7 @@ const db = low(adapter);
 bot.login(process.env.TOKEN);
 
 const emoji = require("./emoji.json");
+const emojis = require("./emojis.js");
 
 //salons DexSia Introduce YourSelf
     const annDXSIY = "452800422655033365"; //salon annonce DexSia Introduce Yourself
