@@ -41,7 +41,33 @@ var values = ("empty"); //empecher les soucis de values
 
 //event on démarrage
 bot.on('ready', () => {
-
+    var d = new Date();
+    var month = new Array();
+    month[0] = "Jan";
+    month[1] = "Fev";
+    month[2] = "Mar";
+    month[3] = "Av";
+    month[4] = "Mai";
+    month[5] = "Jui";
+    month[6] = "Juil";
+    month[7] = "Ao";
+    month[8] = "Sept";
+    month[9] = "Oct";
+    month[10] = "Nov";
+    month[11] = "Dec";
+    var mois = month[d.getMonth()];
+    if (mois === "Dec" || mois === "Jan" || mois === "Fev") {
+        bot.user.setAvatar("https://cdn.discordapp.com/attachments/360840605363863554/475082001058103296/IYSfontH.png")
+    }
+    if (mois === "Mar" || mois === "Av" || mois === "Mai") {
+        bot.user.setAvatar("https://cdn.discordapp.com/attachments/360840605363863554/475082004828782612/IYSfontP.png")
+    }
+    if (mois === "Jui" || mois === "Juil" || mois === "Ao") {
+        bot.user.setAvatar("https://cdn.discordapp.com/attachments/360840605363863554/475081993357361153/IYSfontE.png")
+    }
+    if (mois === "Sept" || mois === "Oct" || mois === "Nov") {
+        bot.user.setAvatar("https://cdn.discordapp.com/attachments/360840605363863554/475081985854013440/IYSfontA.png")
+    }
     bot.user.setPresence({ game: { name: activ}});
     var annonce = db.get(`ann`).map('annonce').value();
     console.log("Le bot est prêt");
