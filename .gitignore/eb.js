@@ -1,5 +1,5 @@
 const angel = "<:051angel:473830204083798016>";
-const angry = "<:051angry:473830204607954955>";
+const angry = "<:051angry:473830204607954955> f";
 const astonished = "<:051astonished:473830199482384384>";
 const astonished1 = "<:051astonished1:473830199797219330>";
 const confused = "<:051confused:473830199906271232>";
