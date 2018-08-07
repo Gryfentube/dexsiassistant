@@ -10,7 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.2.1",
-    "lowdb": "^1.0.0",
+    "request": "^2.87.0",
+    "random-puppy": "^1.1.0",
+    "faker": "^4.1.0",
     "ytdl-core": "^0.20.4",
     "node-opus": "^0.3.0"
   },
