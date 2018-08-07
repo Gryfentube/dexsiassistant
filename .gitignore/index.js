@@ -1,14 +1,8 @@
 const Discord = require('discord.js');
-const low = require('lowdb')
-const FileSync = require('lowdb/adapters/FileSync')
 const bot = new Discord.Client();
-const adapter = new FileSync('database.json');
 const ytdl = require('ytdl-core');
 const streamOptions = { seek: 0, volume: 1 };
 const fs = require('fs');
-const db = low(adapter);
-    db.defaults({ ann:[]})
-        .write()
 bot.login(process.env.TOKEN);
 
 const emoji = require("./emoji.json");
